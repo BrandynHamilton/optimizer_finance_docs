@@ -92,33 +92,65 @@ Website: [optimizerfinance.com](https://www.optimizerfinance.com/)
     * Every hour the Flask app updates, which then sends the new data to a Javascript front end for visualization.  The data is cached hourly, ensuring data synchronization between the two scripts. &#x20;
 * **Domain Valuator**
   * **Script and App**: Technical details on the Python script and Dash app.
+    * The current iteration of the domain valuator is a ridge regression model utilizes web2 and web3 domain sales, going back to 1994.  Features including domain length and top-level domain are engineered for each domain, and the model is trained on the robust data set to be able to forecast the value of a given domain name.
+    * While the ridge regression model scored the highest on accuracy metrics, other estimation models and technologies such as the Prophet library and LSTM models are being considered. &#x20;
   * **Data Integration**: Methods for integrating web2 and web3 data.
+    * The web2 data was obtained via a tsv file and contained hundreds of thousands of data points, whereas the web3 data is obtained directly on chain from 3DNS domain sales.  This data is then integrated into one complete data set.  In the future, web2 domain sales can be obtained via API for more dynamic training.  Web3 domains can already be obtained and updated dynamically given the open nature of blockchain data. &#x20;
 
 #### 6. Revenue Model
 
 * **DAO Robo Advisors**: Performance and management fees.
+  * There are two ways to implement the Treasury Robo Advisors for production use; direct integration with a DAO treasury, where the wallet address is owned by the DAO but managed by the robo advisor (this would allow a DAO to have its own directly managed treasury address and decide to utilize a robo-advisor controlled vault, i.e. half the treasury is in the DAO managed address, and half is in the robo advisor managed address).  Another option is for the Treasury Robo Advisors to be deployed on their own as a sort of mutual fund, where a DAO is able to gain exposure to the DAO by buying a share.  In either case, a flat management fee could be collected upfront upon first deployment and/or on a regularly occurring basis (subscription style fee), and a performance fee based on the robo advisor's excess return over an index or other benchmark could be collected.    &#x20;
+  * The Vault Robo Advisor could similarly be its own vault or vaults, managed by the AI, under the existing CDP protocol.  Here, the DAO could decide which vault or vaults to deploy the robo advisor, allowing hybrid financial management between the advisor and the DAO.  Another option is for the Vault Robo Advisor to not control a vault, but instead simply monitor the financial health and key metrics of the CDP protocol and make recommendations to the DAO, potentially even introducing proposals based on actions it would take.  It could be up to the DAO to decide to what extent the robo advisor is integrated into financial management.  A flat management fee could be collected upront/subscription style, with a performance fee based on excess return over an index/benchmark would be collected. &#x20;
 * **LST Index**: Potential fee structures for the index fund.
+  * Users would gain exposure by buying a share in the fund.  A management fee as a percentage of the deposit could be collected upfront to cover gas and overhead costs.  Upon withdrawal, a performance fee based on excess return over the LSTs could also be collected. &#x20;
+  * A third recurring fee may be necessary for the health of the fund, to ensure gas fees and overhead costs are covered as the previously mentioned fees are only collected upfront or upon withdrawal, meaning that in the meantime there would be no revenue collected.  It may make sense to have the management fee charged upfront and potentially on a monthly basis.  Potential fee structures will need to be modeled to ensure success while also not disincentivizing usage.     &#x20;
 * **Domain Valuator**: Possible monetization strategies.
+  * A fee could be collected for use of the domain valuator.  Further, the valuator could be used as a price oracle for on chain domains, enabling the collection of a fee for its usage in that regard by protocols and entities.  We anticipate that in the future the domain valuator could be used in CDP protocols specifically for on chain domains. &#x20;
 
 #### 7. Roadmap and Future Work
 
 * **Short-term Goals**: Upcoming features and developments.
+  * Test net implementation of DAO Robo Advisors
+    * Treasury advsior more straight forward; similar to LST Index
+    * Vault advisor less so; need test net environment with test net participants
+  * DAO Robo advisor pilots
+    * For treasury advisor, a DAO willing to utilize the advisor for treasury management
+    * For vault advisor, a CDP protocol (Maker, Open Dollar) willing to pilot robo-advised vault&#x20;
+  * Further backtesting of LST index for best parameters such as rebalance frequency, model fit
+  * Creation of Trading/Technical Analysis strategy for LST; intending to minimize slippage.  Currently makes the trades all at once; may need to spread the trades out over the hour and over several exchanges
+  * Create smart contract to mint the fund shares for users who deposit into fund&#x20;
+  * Integration of more data into domain valuator and further model testing, tuning, and feature engineering to increase accuracy on historical data
 * **Long-term Vision**: Expansion plans and future offerings.
+  * LST v1 on mainnet starknet or other network&#x20;
+  * DAO Robo Advisors live on several DAO treasuries/vaults&#x20;
+  * Creation of CDP protocol for on chain domains, utilizing domain valuator as price feed&#x20;
 
 #### 8. Team
 
 * **Founders and Developers**: Introduction to the team behind Optimizer Finance.
+  * Sole Developer/Founder:
+    * Brandyn Hamilton - Experienced Python Developer and Data Analyst specializing in financial dataanalytics, machine learning, and decentralized finance systems. With overseven years of experience in financial analysis, real estate, and research, I holda Master of Science in Management with a focus on Financial Technology.Expert in leveraging Python and SQL for developing financial and analyticalsolutions. Recently recognized as a semi-finalist at StarkHack 2024 for pioneering a machine learning managed index fund of Liquid Staking Tokens
+      * Linkedin:&#x20;
+      * Twitter:
+      * Github:
+      * CV/Portfolio:&#x20;
 * **Advisors and Partners**: List of advisors and strategic partners.
+  * No advsiors or partners at this time
 
 #### 9. Contact Information
 
 * **Website**: Link to optimizerfinance.com.
 * **Email**: Contact email address.
 * **Social Media**: Links to GitHub and other relevant profiles.
+  * Optimizer Finance Github:&#x20;
+  * Optimizer Finance Twitter:&#x20;
 
 #### 10. Appendices
 
 * **DAO Robo Advisor Results**: Detailed performance results.
+  * Links to advsior results and source code for averages testing
 * **LST Index Results**: Comprehensive results and comparisons.
+  * Link to LST index results and source code
 * **Technical References**: Additional technical documentation and resources.
 
