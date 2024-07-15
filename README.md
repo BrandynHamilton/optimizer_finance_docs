@@ -59,9 +59,28 @@ Website: [optimizerfinance.com](https://www.optimizerfinance.com/)
   * Backtesting for the robo advisors showed improved portfolio returns and lower downside risk, as demonstrated by higher returns and Sortino Ratio metrics compared to the historical data. &#x20;
   * Treasury Advisor
     * Averaging the results of 10 runs over 10 different seeds, the Treasury Robo Advisor achieved an average cumualtive return of 120% over the period of March 22, 2023 through May 15, 2025, with a average Sortino Ratio of 3.45.  Compared to the backtested DAO, PanamaDAO, which had a allocation of 99% ETH during the same time period and achieved a cumulative return of 61.80% and Sortino ratio of 1.81.  The treasury advisor also achieved a better Market risk adjusted strategy, with a Beta of 2.7 but a compound annual growth rate of 145%, compared to the DAO Beta of 1.74 and CAGR of 63.39%.  Several DAO Treasury indices were created to allow for comparison to DAO benchmarks; the average RL portfolio outperformed all but one index in terms of returns and market risk.
-  * Vault Advisor
-    * Also averaging the results of 10 runs, the vault advisor similarly achieved outsized returns and lower downside risk.  Over the test period of May 20, 2022 through March 20, 2024, The RL average cumulative return was -19%, Sortino Ratio was -0.22, and Total Value Locked for the portfolio was $10,629,002,211.  Compared to Maker Protocol historical scores during the same period with a cumulative return of -34%, Sortino Ratio of -0.55, and TVL of $7,342,533,784\
-      &#x20;&#x20;
+
+<div>
+
+<figure><img src=".gitbook/assets/newplot (27).png" alt=""><figcaption></figcaption></figure>
+
+ 
+
+<figure><img src=".gitbook/assets/newplot (30).png" alt=""><figcaption></figcaption></figure>
+
+ 
+
+<figure><img src=".gitbook/assets/newplot (31).png" alt=""><figcaption></figcaption></figure>
+
+ 
+
+<figure><img src=".gitbook/assets/newplot (32).png" alt=""><figcaption></figcaption></figure>
+
+</div>
+
+* Vault Advisor
+  * Also averaging the results of 10 runs, the vault advisor similarly achieved outsized returns and lower downside risk.  Over the test period of May 20, 2022 through March 20, 2024, The RL average cumulative return was -19%, Sortino Ratio was -0.22, and Total Value Locked for the portfolio was $10,629,002,211.  Compared to Maker Protocol historical scores during the same period with a cumulative return of -34%, Sortino Ratio of -0.55, and TVL of $7,342,533,784\
+    &#x20;&#x20;
 * **Liquid Staking Token (LST) Index**
   * **Overview**: Introduction to the LST index fund.
 
