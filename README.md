@@ -79,8 +79,11 @@ Website: [optimizerfinance.com](https://www.optimizerfinance.com/)
 </div>
 
 * Vault Advisor
-  * Also averaging the results of 10 runs, the vault advisor similarly achieved outsized returns and lower downside risk.  Over the test period of May 20, 2022 through March 20, 2024, The RL average cumulative return was -19%, Sortino Ratio was -0.22, and Total Value Locked for the portfolio was $10,629,002,211.  Compared to Maker Protocol historical scores during the same period with a cumulative return of -34%, Sortino Ratio of -0.55, and TVL of $7,342,533,784\
-    &#x20;&#x20;
+  * Also averaging the results of 10 runs, the vault advisor similarly achieved outsized returns and lower downside risk.  Over the test period of May 20, 2022 through March 20, 2024, The RL average cumulative return was -19%, Sortino Ratio was -0.22, and Total Value Locked for the portfolio was $10,629,002,211.  Compared to Maker Protocol historical scores during the same period with a cumulative return of -34%, Sortino Ratio of -0.55, and TVL of $7,342,533,784.
+
+![](.gitbook/assets/rl\_vault\_sortino\_run.png)![](.gitbook/assets/rl\_vault\_cum\_run\_tvl.png)![](.gitbook/assets/rl\_vault\_cum\_run.png)\
+&#x20;&#x20;
+
 * **Liquid Staking Token (LST) Index**
   * **Overview**: Introduction to the LST index fund.
 
@@ -94,6 +97,9 @@ Website: [optimizerfinance.com](https://www.optimizerfinance.com/)
   * The model and environment is imported into a Flask app which receives hourly price data for the LSTs via Flipside API, and rebalances given the rebalance frequency parameter.  The model is connected to a wallet on the Starknet Sepolia testnet using the Starknet.py Python SDK; once the model makes the action, the script translates that action into a new target balance, given the current balance of the Starknet wallet, and affects the necessary swaps to achieve the target composition.  Once the new composition is achieved for the fund, the data is captured and visualized on the Javascript front end.  This includes hourly composition, rewards, normalized comparison to LSTs, forecasted prices, fund value, and excess returns over the LSTs. &#x20;
 * **Performance Results**: Highlights of performance metrics and comparison with other LSTs.
   * Averaging 10 runs with 10 different random seeds, starting from January 10, 2023 through June 18, 2024, the index cumulative weighted daily return achieved an average excess return of 43% over rETH, 36% over wstETH, and 35% over sfrxETH.  At the end of the period, the index attained a CAGR of 125% compared to 103% for rETH, 107% for wstETH, and 107% for sfrxETH.  &#x20;
+
+
+
 * **Domain Valuator**
   * **Overview**: Introduction to the domain valuator tool.
 
