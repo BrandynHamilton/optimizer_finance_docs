@@ -58,31 +58,42 @@ Website: [optimizerfinance.com](https://www.optimizerfinance.com/)
 * **Performance Metrics**:&#x20;
   * Backtesting for the robo advisors showed improved portfolio returns and lower downside risk, as demonstrated by higher returns and Sortino Ratio metrics compared to the historical data. &#x20;
   * Treasury Advisor
-    * Averaging the results of 10 runs over 10 different seeds, the Treasury Robo Advisor achieved an average cumualtive return of 120% over the period of March 22, 2023 through May 15, 2025, with a average Sortino Ratio of 3.45.  Compared to the backtested DAO, PanamaDAO, which had a allocation of 99% ETH during the same time period and achieved a cumulative return of 61.80% and Sortino ratio of 1.81.  The treasury advisor also achieved a better Market risk adjusted strategy, with a Beta of 2.7 but a compound annual growth rate of 145%, compared to the DAO Beta of 1.74 and CAGR of 63.39%.  Several DAO Treasury indices were created to allow for comparison to DAO benchmarks; the average RL portfolio outperformed all but one index in terms of returns and market risk.
+    * Averaging the results of 10 runs over 10 different seeds, 15 day rebalance frequency, the Treasury Robo Advisor achieved an average cumualtive return of 120% over the period of March 22, 2023 through May 15, 2025, with a average Sortino Ratio of 3.45.  Compared to the backtested DAO, PanamaDAO, which had a allocation of 99% ETH during the same time period and achieved a cumulative return of 61.80% and Sortino ratio of 1.81.  The treasury advisor also achieved a better Market risk adjusted strategy, with a Beta of 2.7 but a compound annual growth rate of 145%, compared to the DAO Beta of 1.74 and CAGR of 63.39%.  Several DAO Treasury indices were created to allow for comparison to DAO benchmarks; the average RL portfolio outperformed all but one index in terms of returns and market risk.
 
 <div>
 
-<figure><img src=".gitbook/assets/newplot (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/newplot (27).png" alt=""><figcaption><p>Portfolio composition for one run</p></figcaption></figure>
 
  
 
-<figure><img src=".gitbook/assets/newplot (30).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/newplot (30).png" alt=""><figcaption><p>Cumulative returns of each run</p></figcaption></figure>
 
  
 
-<figure><img src=".gitbook/assets/newplot (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/newplot (31).png" alt=""><figcaption><p>Normalized, averaged returns of each run</p></figcaption></figure>
 
  
 
-<figure><img src=".gitbook/assets/newplot (32).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/newplot (32).png" alt=""><figcaption><p>Beta and CAGR of averaged returns in Security Market Line visualization</p></figcaption></figure>
 
 </div>
 
 * Vault Advisor
   * Also averaging the results of 10 runs, the vault advisor similarly achieved outsized returns and lower downside risk.  Over the test period of May 20, 2022 through March 20, 2024, The RL average cumulative return was -19%, Sortino Ratio was -0.22, and Total Value Locked for the portfolio was $10,629,002,211.  Compared to Maker Protocol historical scores during the same period with a cumulative return of -34%, Sortino Ratio of -0.55, and TVL of $7,342,533,784.
 
-![](.gitbook/assets/rl\_vault\_sortino\_run.png)![](.gitbook/assets/rl\_vault\_cum\_run\_tvl.png)![](.gitbook/assets/rl\_vault\_cum\_run.png)\
-&#x20;&#x20;
+<div>
+
+<figure><img src=".gitbook/assets/rl_vault_cum_run.png" alt=""><figcaption><p>Cumulative returns of each run</p></figcaption></figure>
+
+ 
+
+<figure><img src=".gitbook/assets/rl_vault_cum_run_tvl.png" alt=""><figcaption><p>TVL of each run</p></figcaption></figure>
+
+ 
+
+<figure><img src=".gitbook/assets/rl_vault_sortino_run.png" alt=""><figcaption><p>Sortino ratios of each run</p></figcaption></figure>
+
+</div>
 
 * **Liquid Staking Token (LST) Index**
   * **Overview**: Introduction to the LST index fund.
@@ -98,7 +109,15 @@ Website: [optimizerfinance.com](https://www.optimizerfinance.com/)
 * **Performance Results**: Highlights of performance metrics and comparison with other LSTs.
   * Averaging 10 runs with 10 different random seeds, starting from January 10, 2023 through June 18, 2024, the index cumulative weighted daily return achieved an average excess return of 43% over rETH, 36% over wstETH, and 35% over sfrxETH.  At the end of the period, the index attained a CAGR of 125% compared to 103% for rETH, 107% for wstETH, and 107% for sfrxETH.  &#x20;
 
+<div>
 
+<figure><img src=".gitbook/assets/normalized_comparison.png" alt=""><figcaption><p>Results of Each Run</p></figcaption></figure>
+
+ 
+
+<figure><img src=".gitbook/assets/avg_normalized_comparison.png" alt=""><figcaption><p>Averaging the 10 Runs</p></figcaption></figure>
+
+</div>
 
 * **Domain Valuator**
   * **Overview**: Introduction to the domain valuator tool.
@@ -116,15 +135,26 @@ Website: [optimizerfinance.com](https://www.optimizerfinance.com/)
 * **DAO Robo Advisors**
   * **Architecture**: Technical details on the Streamlit app.
     * The current iteration is live in the form of a Streamlit app which allows a user to configure their own robo advisor and compare results to historical data and benchmarks.  An on chain iteration could be used as a stand alone fund in which a DAO would buy a share, or integrated to rebalance a specific DAO Treasury wallet address. &#x20;
-  * **Data Handling**: Explanation of data processing and model training.
-    * Vault Robo Advisor
+
+<figure><img src=".gitbook/assets/dao_robo_advsior_flow.png" alt=""><figcaption><p>Streamlit App Flow</p></figcaption></figure>
+
+* **Data Handling**: Explanation of data processing and model training.
+  *   Vault Robo Advisor
+
       * The Vault Robo Advisor utilizes a simulation portion to backtest the model's strategy.  This simulator utilizes multiple linear regression with ridge hypertuning, as well as other stochastic variables such as moving average volatility, to simulate vault balances changes as a result of debt ceiling adjustments.  This forecasting model was trained on tens of thousands of data points obtained from onchain data analysis of the Maker core accounting system (VAT), existing dashboards and queries aggregating protocol data, as well as crypto market and macroeconomic data such as risk-free rates, CPI, crypto market volume, etc.&#x20;
       * The vault robo advisor works on a 24 day rebalance strategy; every 24 days the model calculates mean variance optimization target weights, portfolio return and Sortino Ratio, which is translated into a reward.  Given that reward, the model chooses a debt ceiling adjustment strategy which targets an optimal portfolio composition.  For example, the target weights may signify less capital in the ETH vault and more capital in the BTC vault, as a result of Sortino ratio calculations for each vault.  As a result, the model will reduce the ETH vault and increase the BTC vault by a certain amount over the 24 day period. &#x20;
       * The custom RL model trains by making random actions for the first few 24 day cycles, and from then on uses the results of those actions to inform an optimal policy, continuously learning from its actions. &#x20;
-    * Treasury Robo Advisor&#x20;
-      * The Treasury Robo Advisor is more direct in rebalancing a portfolio.  DAO Treasury indicies and benchmarks were created by calculating the weighted daily returns of the treasury assets for a variety of DAOs by sector, and those returns were aggregated to represent a sector index.  Regarding the model itself, in an attempt to smooth over cash flows which would impact the DAO treasury balance, the model targets specific portfolio compositions, and returns are calculated in the same manner as the DAO treasury indicies.  Given the rebalance parameter, the model generates an action given a combined Sortino ratio and portfolio return reward as feedback.  Unlike the Vault Robo Advisor, we are able to directly swap into the target portfolio composition, removing the need for a simulation model. &#x20;
-      * After the model runs for the specified start and end date, the ending portfolio return and sortino ratio are calculated, as well as normalized returns.  This is used for comparison with the DAO treasury indicies.  Furthermore, a security market line visualization is created to also compare the portfolio performance in terms of market risk/return.     &#x20;
-      * The model is first trained and fitted on historical data to develop an optimal policy for the environment.  Once a model which performs well on historical data is fitted, the model is deployed in a test run. &#x20;
+
+
+
+      <figure><img src=".gitbook/assets/vault_advisor_cycle.png" alt=""><figcaption><p>Vault Advisor Cycle</p></figcaption></figure>
+* Treasury Robo Advisor&#x20;
+  * The Treasury Robo Advisor is more direct in rebalancing a portfolio.  DAO Treasury indicies and benchmarks were created by calculating the weighted daily returns of the treasury assets for a variety of DAOs by sector, and those returns were aggregated to represent a sector index.  Regarding the model itself, in an attempt to smooth over cash flows which would impact the DAO treasury balance, the model targets specific portfolio compositions, and returns are calculated in the same manner as the DAO treasury indicies.  Given the rebalance parameter, the model generates an action given a combined Sortino ratio and portfolio return reward as feedback.  Unlike the Vault Robo Advisor, we are able to directly swap into the target portfolio composition, removing the need for a simulation model. &#x20;
+  * After the model runs for the specified start and end date, the ending portfolio return and sortino ratio are calculated, as well as normalized returns.  This is used for comparison with the DAO treasury indicies.  Furthermore, a security market line visualization is created to also compare the portfolio performance in terms of market risk/return.     &#x20;
+  * The model is first trained and fitted on historical data to develop an optimal policy for the environment.  Once a model which performs well on historical data is fitted, the model is deployed in a test run. &#x20;
+
+<figure><img src=".gitbook/assets/treasury_advisor_cycle.png" alt=""><figcaption><p>Treasury Advisor Cycle</p></figcaption></figure>
+
 * **LST Index**
   * **Environment Setup**: Description of the RL environment.
     * This model is a customized extension of the Treasury Robo Advisor.  Instead of focusing on and being backtested to DAO treasury performance, the model targets an optimal portfolio of LSTs, designed to provide the best exposure to the asset class.  Hourly data is fed to the model, with rewards and forecasts generated accordingly.  The model rebalances given the rebalance frequency parameter. &#x20;
@@ -134,12 +164,20 @@ Website: [optimizerfinance.com](https://www.optimizerfinance.com/)
     * A Prophet library univariate forecasting model was backtested to predict the prices for respective LSTs.  This fitted model was then deployed in the live RL model environment.  &#x20;
   * **Flask API**: Details on the API endpoints and background tasks.
     * Every hour the Flask app updates, which then sends the new data to a Javascript front end for visualization.  The data is cached hourly, ensuring data synchronization between the two scripts. &#x20;
+
+<figure><img src=".gitbook/assets/lst_index_cycle.png" alt=""><figcaption><p>LST Index Cycle</p></figcaption></figure>
+
 * **Domain Valuator**
   * **Script and App**: Technical details on the Python script and Dash app.
     * The current iteration of the domain valuator is a ridge regression model utilizes web2 and web3 domain sales, going back to 1994.  Features including domain length and top-level domain are engineered for each domain, and the model is trained on the robust data set to be able to forecast the value of a given domain name.
     * While the ridge regression model scored the highest on accuracy metrics, other estimation models and technologies such as the Prophet library and LSTM models are being considered. &#x20;
-  * **Data Integration**: Methods for integrating web2 and web3 data.
-    * The web2 data was obtained via a tsv file and contained hundreds of thousands of data points, whereas the web3 data is obtained directly on chain from 3DNS domain sales.  This data is then integrated into one complete data set.  In the future, web2 domain sales can be obtained via API for more dynamic training.  Web3 domains can already be obtained and updated dynamically given the open nature of blockchain data. &#x20;
+
+<figure><img src=".gitbook/assets/domain_valuator_cycle.png" alt=""><figcaption><p>Dash App Flow</p></figcaption></figure>
+
+* **Data Integration**: Methods for integrating web2 and web3 data.
+  * The web2 data was obtained via a tsv file and contained hundreds of thousands of data points, whereas the web3 data is obtained directly on chain from 3DNS domain sales.  This data is then integrated into one complete data set.  In the future, web2 domain sales can be obtained via API for more dynamic training.  Web3 domains can already be obtained and updated dynamically given the open nature of blockchain data. &#x20;
+
+<figure><img src=".gitbook/assets/Domain_valuator_training_graph.png" alt=""><figcaption><p>Model Training Cycle</p></figcaption></figure>
 
 #### 6. Revenue Model
 
