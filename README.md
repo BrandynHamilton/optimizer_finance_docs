@@ -216,7 +216,7 @@ Every hour the Flask app updates, which then sends the new data to a Javascript 
 
 ### **Domain Valuator**
 
-#### **Script and App**
+#### **Model**
 
 The current iteration of the domain valuator is a ridge regression model that utilizes web2 and web3 domain sales, going back to 1994.  Features including domain length and TLD are engineered for each domain, and the model is trained on the robust data set to be able to estimate the value of a given domain name.
 
@@ -274,15 +274,15 @@ A fee could be collected for using the domain valuator. Additionally, the valuat
 ### **Long-term Vision**: Expansion plans and future offerings.
 
 * LST v1 on mainnet Starknet or other network&#x20;
-* DAO Robo Advisors live on several DAO treasuries/vaults&#x20;
-* Creation of CDP protocol for on chain domains, utilizing domain valuator as price feed&#x20;
+* DAO Robo-Advisors live on several DAO treasuries/vaults&#x20;
+* Creation of CDP protocol for on-chain domains, utilizing domain valuator as price feed&#x20;
 
 ## 8. Team
 
 ### **Founders and Developers**
 
 * Sole Developer/Founder:
-  * Brandyn Hamilton - Experienced Python Developer and Data Analyst specializing in financial data analytics, machine learning, and decentralized finance systems. With over seven years of experience in financial analysis, real estate, and research, I hold a Master of Science in Management with a focus on Financial Technology. Expert in leveraging Python and SQL for developing financial and analytical solutions. Recently recognized as a semi-finalist at StarkHack 2024 for pioneering a machine learning managed index fund of Liquid Staking Tokens
+  * Brandyn Hamilton - Experienced Python Developer and Data Analyst specializing in financial data analytics, machine learning, and decentralized finance systems. With over seven years of experience in financial analysis, real estate, and research, he holds a Master of Science in Management with a focus on Financial Technology. Expert in leveraging Python and SQL for developing financial and analytical solutions. Recently recognized as a semi-finalist at StarkHack 2024 for pioneering a machine learning managed index fund of Liquid Staking Tokens
     * Linkedin: [https://www.linkedin.com/in/brandyn-hamilton/](https://www.linkedin.com/in/brandyn-hamilton/)
     * Twitter: [https://x.com/Bhami628](https://x.com/Bhami628)
     * Github: [https://github.com/BrandynHamilton](https://github.com/BrandynHamilton)
@@ -302,9 +302,11 @@ A fee could be collected for using the domain valuator. Additionally, the valuat
 ## 10. Appendices
 
 * **DAO Robo Advisor Results**: Detailed performance results.
-  * [https://robo-advisor-labs.gitbook.io/dao-robo-advisor-whitepaper/vault-robo-advisor-results](https://robo-advisor-labs.gitbook.io/dao-robo-advisor-whitepaper/vault-robo-advisor-results)
-  * [https://robo-advisor-labs.gitbook.io/dao-robo-advisor-whitepaper/treasury-robo-advisor-results](https://robo-advisor-labs.gitbook.io/dao-robo-advisor-whitepaper/treasury-robo-advisor-results)
+  * Vault Advisor - [https://robo-advisor-labs.gitbook.io/dao-robo-advisor-whitepaper/vault-robo-advisor-results](https://robo-advisor-labs.gitbook.io/dao-robo-advisor-whitepaper/vault-robo-advisor-results)
+  * Treasury Advisor - [https://robo-advisor-labs.gitbook.io/dao-robo-advisor-whitepaper/treasury-robo-advisor-results](https://robo-advisor-labs.gitbook.io/dao-robo-advisor-whitepaper/treasury-robo-advisor-results)
 * **LST Index Results**: Comprehensive results and comparisons.
   * [https://robo-advisor-labs.gitbook.io/lst-index/lst-index-results](https://robo-advisor-labs.gitbook.io/lst-index/lst-index-results)
 * **Technical References**: Additional technical documentation and resources.
+  * PPO - [https://spinningup.openai.com/en/latest/algorithms/ppo.html](https://spinningup.openai.com/en/latest/algorithms/ppo.html)
+  * Gym Environment - [https://gymnasium.farama.org/index.html](https://gymnasium.farama.org/index.html)
 
