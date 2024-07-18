@@ -184,19 +184,19 @@ After the model runs for the specified start and end date, the final portfolio r
 
 #### **Environment Setup**
 
-This model is a customized extension of the Treasury Advisor.  Instead of focusing on and being backtested to DAO treasury performance, the model targets an optimal portfolio of LSTs and is designed to provide the best exposure to the asset class.  Hourly data is fed to the model, with rewards and forecasts generated accordingly.  The model rebalances given the rebalance frequency parameter. &#x20;
+This model is a customized extension of the Treasury Advisor. Instead of focusing on and being backtested against DAO treasury performance, it targets an optimal portfolio of Liquid Staking Tokens (LSTs) to provide the best exposure to the asset class. The model receives hourly data, generating rewards and forecasts accordingly, and rebalances based on the specified rebalance frequency parameter.
 
-The model was trained and fitted to historical data, from January 2023 through June 2024, to develop an optimal policy for the environment.  This optimized model was then deployed on live data.  From initial backtesting, a 24 hour rebalance frequency performed best. &#x20;
+The model was trained and fitted to historical data from January 2023 through June 2024 to develop an optimal policy for the environment. This optimized model was then deployed on live data. Initial backtesting indicated that a 24-hour rebalance frequency yielded the best performance.&#x20;
 
 #### **Forecasting and Blockchain Integration**
 
-The index fund was deployed on the Starknet Sepolia testnet and rebalances a wallet address given testnet ERC20 tokens representing wstETH, rETH, and sfrxETH.  Hourly data is received from a Flipside API, and model actions are translated into on chain swaps.  A second flask app and wallet address was deployed to represent a DEX which holds the balances for the testnet ERC20 tokens.  The RL flask app sends the logical amount of tokens to the DEX, and the DEX sends back the logical amount to reach the target balance.  This utilizes price feeds from Flipside API.   &#x20;
+The index fund was deployed on the Starknet Sepolia testnet and rebalances a wallet address using testnet ERC20 tokens representing wstETH, rETH, and sfrxETH. Hourly data is received from a Flipside API, and model actions are translated into on-chain swaps. A second Flask app and wallet address were deployed to represent a DEX holding balances for the testnet ERC20 tokens. The RL Flask app sends the logical amount of tokens to the DEX, and the DEX sends back the necessary amount to reach the target balance, utilizing price feeds from the Flipside API.
 
-A Prophet library univariate forecasting model was backtested to predict the prices for respective LSTs.  This fitted model was then deployed in the live RL model environment.  &#x20;
+A Prophet library univariate forecasting model was backtested to predict the prices for the respective LSTs. This fitted model was then deployed in the live RL model environment.
 
 #### **Flask App**
 
-Every hour the Flask app updates, which then sends the new data to a Javascript front end for visualization.  The data is cached hourly, ensuring data synchronization between the two scripts. &#x20;
+Every hour the Flask app updates, which then sends the new data to a Javascript front end for visualization.  The data is cached hourly, ensuring synchronization between the two scripts. &#x20;
 
 <figure><img src=".gitbook/assets/lst_index_cycle.png" alt=""><figcaption><p>LST Index Cycle</p></figcaption></figure>
 
@@ -204,15 +204,15 @@ Every hour the Flask app updates, which then sends the new data to a Javascript 
 
 #### **Script and App**
 
-The current iteration of the domain valuator is a ridge regression model utilizes web2 and web3 domain sales, going back to 1994.  Features including domain length and TLD are engineered for each domain, and the model is trained on the robust data set to be able to forecast the value of a given domain name.
+The current iteration of the domain valuator is a ridge regression model utilizes web2 and web3 domain sales, going back to 1994.  Features including domain length and TLD are engineered for each domain, and the model is trained on the robust data set to be able to estimate the value of a given domain name.
 
-While the ridge regression model scored the highest on accuracy metrics, other estimation models and technologies such as the Prophet library and LSTM models are being considered. &#x20;
+While the ridge regression model scored the highest on accuracy metrics, other estimation models and technologies such as Prophet and LSTM models are being considered. &#x20;
 
 <figure><img src=".gitbook/assets/domain_valuator_cycle.png" alt=""><figcaption><p>Dash App Flow</p></figcaption></figure>
 
 #### **Data Integration**
 
-The web2 data was obtained via a .tsv file and contained hundreds of thousands of data points, whereas the web3 data is obtained directly on chain from 3DNS domain sales.  This data is then integrated into one complete data set.  In the future, web2 domain sales can be obtained via API for more dynamic training.  Web3 domains can already be obtained and updated dynamically given the open nature of blockchain data. &#x20;
+The web2 data was obtained via a .tsv file containing hundreds of thousands of data points, while the web3 data is sourced directly on-chain from 3DNS domain sales. This data is then integrated into a comprehensive dataset. In the future, web2 domain sales can be obtained via API for more dynamic training, whereas web3 domains can already be dynamically obtained and updated due to the open nature of blockchain data. &#x20;
 
 <figure><img src=".gitbook/assets/Domain_valuator_training_graph.png" alt=""><figcaption><p>Model Training Cycle</p></figcaption></figure>
 
@@ -222,19 +222,19 @@ The web2 data was obtained via a .tsv file and contained hundreds of thousands o
 
 #### **DAO Robo Advisors**
 
-There are two ways to implement the Treasury Robo Advisors for production use; direct integration with a DAO treasury, where the wallet address is owned by the DAO but managed by the robo advisor (this would allow a DAO to have its own directly managed treasury address and decide to utilize a robo-advisor controlled vault, i.e. half the treasury is in the DAO managed address, and half is in the robo advisor managed address).  Another option is for the Treasury Robo Advisors to be deployed on their own as a sort of mutual fund, where a DAO is able to gain exposure to the DAO by buying a share.  In either case, a flat management fee could be collected upfront upon first deployment and/or on a regularly occurring basis (subscription style fee), and a performance fee based on the robo advisor's excess return over an index or other benchmark could be collected.    &#x20;
+There are two ways to implement the Treasury Robo Advisors for production use. One approach is direct integration with a DAO treasury, where the wallet address is owned by the DAO but managed by the robo-advisor. This allows a DAO to have its own directly managed treasury address and utilize a robo-advisor controlled vault, with the treasury divided between the DAO-managed address and the robo-advisor managed address. Another option is to deploy the Treasury Robo Advisors independently as a sort of mutual fund, where a DAO can gain exposure by buying shares. In either scenario, a flat management fee could be collected upfront upon first deployment and/or on a regular basis (subscription-style fee), and a performance fee based on the robo-advisor's excess return over an index or benchmark could also be collected.
 
-The Vault Robo Advisor could similarly be its own vault or vaults, managed by the AI, under the existing CDP protocol.  Here, the DAO could decide which vault or vaults to deploy the robo advisor, allowing hybrid financial management between the advisor and the DAO.  Another option is for the Vault Robo Advisor to not control a vault, but instead simply monitor the financial health and key metrics of the CDP protocol and make recommendations to the DAO, potentially even introducing proposals based on actions it would take.  It could be up to the DAO to decide to what extent the robo advisor is integrated into financial management.  A flat management fee could be collected upfront/subscription style, with a performance fee based on excess return over an index/benchmark would be collected. &#x20;
+Similarly, the Vault Robo Advisor could operate as its own vault or multiple vaults managed by the AI within the existing CDP protocol. The DAO could choose which vaults to deploy the robo-advisor in, enabling hybrid financial management between the advisor and the DAO. Alternatively, the Vault Robo Advisor could function without directly controlling a vault, instead monitoring the financial health and key metrics of the CDP protocol and making recommendations to the DAO, potentially even proposing actions. The extent of the robo-advisor's integration into financial management would be up to the DAO. A flat management fee could be collected upfront or on a subscription basis, with a performance fee based on excess return over an index or benchmark.
 
 #### **LST Index**
 
-Users would gain exposure by buying a share in the fund.  A management fee as a percentage of the deposit could be collected upfront to cover gas and overhead costs.  Upon withdrawal, a performance fee based on excess return over the LSTs could also be collected. &#x20;
+Users would gain exposure by purchasing shares in the fund. A management fee, as a percentage of the deposit, could be collected upfront to cover gas and overhead costs. Upon withdrawal, a performance fee based on excess return over the LSTs could also be collected.
 
-A third recurring fee may be necessary for the health of the fund, to ensure gas fees and overhead costs are covered as the previously mentioned fees are only collected upfront or upon withdrawal, meaning that in the meantime there would be no revenue collected.  It may make sense to have the management fee charged upfront and potentially on a monthly basis.  Potential fee structures will need to be modeled to ensure success while also not dis-incentivizing usage.     &#x20;
+To ensure the health of the fund, a third recurring fee may be necessary to cover ongoing gas fees and overhead costs, as the previously mentioned fees are only collected upfront or upon withdrawal, leaving no revenue collected in the meantime. It may be practical to charge the management fee upfront and potentially on a monthly basis. Potential fee structures will need to be modeled to ensure success without dis-incentivizing usage.
 
 #### **Domain Valuator**
 
-A fee could be collected for use of the domain valuator.  Further, the valuator could be used as a price oracle for on chain domains, enabling the collection of a fee for its usage in that regard by protocols and entities.  We anticipate that in the future the domain valuator could be used in CDP protocols specifically for on chain domains. &#x20;
+A fee could be collected for using the domain valuator. Additionally, the valuator could serve as a price oracle for on-chain domains, allowing protocols and entities to pay for its usage in this capacity. In the future, we anticipate that the domain valuator could be integrated into CDP protocols specifically for on-chain domains.&#x20;
 
 ### **Business Model**
 
