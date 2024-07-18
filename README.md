@@ -20,7 +20,7 @@ Website: [optimizerfinance.com](https://www.optimizerfinance.com/)
 
 The purpose of this litepaper is to provide an overview of Optimizer Finance, its current applications and projects, and future goals.&#x20;
 
-Optimizer Finance is a research lab at the forefront of decentralized finance (DeFi) and machine learning (ML). By leveraging advanced data analytics and ML techniques, we optimize financial products and services within the DeFi ecosystem and extend these innovations to broader financial services. Emphasizing innovation, research, and collaboration, Optimizer Finance consistently outperforms market benchmarks and delivers cutting-edge solutions to propel the DeFi sector forward.
+Optimizer Finance is a research lab at the forefront of decentralized finance (DeFi) and machine learning (ML). By leveraging advanced data analytics and ML techniques, we optimize financial products and services within the DeFi ecosystem and extend these innovations to broader financial applications. Emphasizing innovation, research, and collaboration, Optimizer Finance consistently outperforms market benchmarks and delivers cutting-edge solutions to propel the DeFi sector forward.
 
 As of current writing, Optimizer Finance has three applications which are:
 
@@ -40,7 +40,7 @@ The DeFi space offers an environment for testing truly new and innovative concep
 
 In the realm of DeFi, the introduction of Real World Assets (RWA) as an asset class has created a bridge between traditional finance and blockchain-enabled financial applications. However, integrating RWAs, which are mostly non-digitally native, poses considerable friction. Domain names, being digitally native, represent a unique type of RWA. The on-chain domain registrar 3DNS allows anyone to mint a domain as a blockchain asset, enabling easy and direct trading, management, and financial applications such as collateralized loans. Domain names may be the most optimal type of RWA currently, with companies like 3DNS and top-level domains (TLDs) such as .box leading the integration of the Domain and Blockchain industries.
 
-The introduction of large language models (LLMs) like ChatGPT and the increasing availability of affordable computing power have made ML accessible to a wider audience, allowing developers to test and develop concepts integrating ML. Traditional financial services are steadily incorporating ML into operations, with the use of robo-advisors increasing in the industry. Robo-advisors enable impartial financial analysis and can remove emotion from trading, often resulting in better returns compared to traditional strategies. The most impactful ML methods in finance have been forecasting, useful for predicting asset prices and market movements, and reinforcement learning, which has proven effective in managing portfolio rebalancing. With increased access to ML, we are witnessing a revolution in its application in finance.
+The introduction of large language models (LLMs) like ChatGPT and the increasing availability of affordable computing power have made ML accessible to a wider audience, allowing developers to test and develop concepts integrating ML. Traditional financial services are steadily incorporating ML into operations, with the use of robo-advisors increasing in the industry. Robo-advisors enable impartial financial analysis and can remove emotion from trading, often resulting in better returns compared to traditional strategies. The most impactful ML methods in finance have been forecasting, useful for predicting asset prices and market movements, and reinforcement learning, which has proven effective in portfolio management. With increased access to ML, we are witnessing a revolution in its application in finance.
 
 ## 3. Problem Statement
 
@@ -164,7 +164,7 @@ The model is currently being used to value .box domains as part of a .box dashbo
 
 ## 5. Technical Architecture
 
-### **DAO Robo Advisors**
+### **DAO Robo-Advisors**
 
 #### **Architecture**
 
@@ -172,13 +172,13 @@ This project is live in the form of a Streamlit app which allows a user to confi
 
 <figure><img src=".gitbook/assets/dao_robo_advsior_flow.png" alt=""><figcaption><p>Streamlit App Flow</p></figcaption></figure>
 
-#### **Data Handling**
+#### **Data Handling and Model Overview**
 
 _**Vault Advisor**_
 
 The Vault Advisor uses a simulation component to backtest the model's strategy. This simulator employs multiple linear regression with ridge tuning and incorporates stochastic variables such as moving average volatility to simulate changes in vault balances due to debt ceiling adjustments. The forecasting model was trained on tens of thousands of data points from on-chain data analysis of the Maker core accounting system (VAT), existing dashboards and protocol data queries, and macroeconomic and crypto market data, including risk-free rates, CPI, and market volume.
 
-Operating on a 24-day rebalance strategy, the model calculates MVO target weights, portfolio return, and Sortino ratio every 24 days, which are then translated into a reward. Based on this reward, the model selects a debt ceiling adjustment strategy that targets an optimal portfolio composition. For instance, Sortino ratio calculations for each vault might result in reduced capital in the ETH vault and increased capital in the BTC vault. Consequently, the model will decrease the ETH vault and increase the BTC vault over the 24-day period.
+Operating on a 24-day rebalance strategy, the model calculates MVO target weights, portfolio return, and Sortino ratio every 24 days, which are then translated into a reward. Based on this reward, the model selects a debt ceiling adjustment strategy that targets an optimal portfolio composition. For instance, Sortino ratio calculations for each vault might target reduced capital in the ETH vault and increased capital in the BTC vault. Consequently, the model will decrease the ETH vault and increase the BTC vault over the 24-day period.
 
 The custom RL model begins training by making random actions during the initial 24-day cycles, using the outcomes to develop an optimal policy and continuously refining its strategy based on these results.
 
@@ -188,9 +188,9 @@ The custom RL model begins training by making random actions during the initial 
 
 _**Treasury Advisor**_&#x20;
 
-The Treasury Advisor takes a more direct approach to portfolio rebalancing. DAO treasury indices and benchmarks are created by calculating the weighted daily returns of treasury assets across various DAOs by sector, aggregating these returns to form a sector index. The model targets specific portfolio compositions to smooth cash flows that could impact the DAO treasury balance, calculating returns in the same manner as the DAO treasury indices. Given the rebalance parameter, the model generates actions based on a combined Sortino ratio and portfolio return reward as feedback. Unlike the Vault Advisor, this model allows for direct swaps into the target portfolio composition, eliminating the need for a simulation model.
+The Treasury Advisor takes a more direct approach to portfolio rebalancing. DAO treasury indices and benchmarks are created by calculating the weighted daily returns of treasury assets across various DAOs by sector, aggregating these returns to form a sector index. The model targets specific portfolio compositions in an attempt to smooth over cash flows that could impact the DAO treasury balance, and calculates returns in the same manner as the DAO treasury indices. Given the rebalance parameter, the model generates actions and relies on a combined Sortino ratio and portfolio return reward as feedback. Unlike the Vault Advisor, this model allows for direct swaps into the target portfolio composition, eliminating the need for a simulation model.
 
-After the model runs for the specified start and end date, the final portfolio return, Sortino ratio, and normalized returns are calculated and compared with the DAO treasury indices. Additionally, a security market line visualization is created to compare portfolio performance in terms of market risk/return. The model is initially trained and fitted on historical data to develop an optimal policy for the environment. Once a well-performing model is established, it is deployed in a test run.
+After the model runs for the specified start and end date, the final portfolio return, Sortino ratio, and normalized returns are calculated and compared with the DAO treasury indices. Additionally, a security market line visualization is created to compare portfolio performance in terms of the capital asset pricing model. The model is initially trained and fitted on historical data to develop an optimal policy for the environment. Once a well-performing model is established, it is deployed in a test run.
 
 <figure><img src=".gitbook/assets/treasury_advisor_cycle.png" alt=""><figcaption><p>Treasury Advisor Cycle</p></figcaption></figure>
 
