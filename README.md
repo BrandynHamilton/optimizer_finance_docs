@@ -178,7 +178,7 @@ _**Vault Advisor**_
 
 The Vault Advisor uses a simulation component to backtest the model's strategy. This simulator employs multiple linear regression with ridge tuning and incorporates stochastic variables such as moving average volatility to simulate changes in vault balances due to debt ceiling adjustments. The forecasting model was trained on tens of thousands of data points from on-chain data analysis of the Maker core accounting system (VAT), existing dashboards and protocol data queries, and macroeconomic and crypto market data, including risk-free rates, CPI, and market volume.
 
-Operating on a 24-day rebalance strategy, the model calculates mean variance optimization target weights, portfolio return, and Sortino ratio every 24 days, which are then translated into a reward. Based on this reward, the model selects a debt ceiling adjustment strategy that targets an optimal portfolio composition. For instance, Sortino ratio calculations for each vault might result in reduced capital in the ETH vault and increased capital in the BTC vault. Consequently, the model will decrease the ETH vault and increase the BTC vault over the 24-day period.
+Operating on a 24-day rebalance strategy, the model calculates MVO target weights, portfolio return, and Sortino ratio every 24 days, which are then translated into a reward. Based on this reward, the model selects a debt ceiling adjustment strategy that targets an optimal portfolio composition. For instance, Sortino ratio calculations for each vault might result in reduced capital in the ETH vault and increased capital in the BTC vault. Consequently, the model will decrease the ETH vault and increase the BTC vault over the 24-day period.
 
 The custom RL model begins training by making random actions during the initial 24-day cycles, using the outcomes to develop an optimal policy and continuously refining its strategy based on these results.
 
@@ -188,7 +188,7 @@ The custom RL model begins training by making random actions during the initial 
 
 _**Treasury Advisor**_&#x20;
 
-The Treasury Advisor takes a more direct approach to portfolio rebalancing. DAO Treasury indices and benchmarks are created by calculating the weighted daily returns of treasury assets across various DAOs by sector, aggregating these returns to form a sector index. The model targets specific portfolio compositions to smooth cash flows that could impact the DAO treasury balance, calculating returns in the same manner as the DAO treasury indices. Given the rebalance parameter, the model generates actions based on a combined Sortino ratio and portfolio return reward as feedback. Unlike the Vault Robo Advisor, this model allows for direct swaps into the target portfolio composition, eliminating the need for a simulation model.
+The Treasury Advisor takes a more direct approach to portfolio rebalancing. DAO treasury indices and benchmarks are created by calculating the weighted daily returns of treasury assets across various DAOs by sector, aggregating these returns to form a sector index. The model targets specific portfolio compositions to smooth cash flows that could impact the DAO treasury balance, calculating returns in the same manner as the DAO treasury indices. Given the rebalance parameter, the model generates actions based on a combined Sortino ratio and portfolio return reward as feedback. Unlike the Vault Advisor, this model allows for direct swaps into the target portfolio composition, eliminating the need for a simulation model.
 
 After the model runs for the specified start and end date, the final portfolio return, Sortino ratio, and normalized returns are calculated and compared with the DAO treasury indices. Additionally, a security market line visualization is created to compare portfolio performance in terms of market risk/return. The model is initially trained and fitted on historical data to develop an optimal policy for the environment. Once a well-performing model is established, it is deployed in a test run.
 
@@ -210,7 +210,7 @@ A Prophet library univariate forecasting model was backtested to predict the pri
 
 #### **Flask App**
 
-Every hour the Flask app updates, which then sends the new data to a Javascript front end for visualization.  The data is cached hourly, ensuring synchronization between the two scripts. &#x20;
+Every hour the Flask app updates, which then sends the new data to a Javascript front-end for visualization.  The data is cached hourly, ensuring synchronization between the two scripts. &#x20;
 
 <figure><img src=".gitbook/assets/lst_index_cycle.png" alt=""><figcaption><p>LST Index Cycle</p></figcaption></figure>
 
@@ -218,7 +218,7 @@ Every hour the Flask app updates, which then sends the new data to a Javascript 
 
 #### **Script and App**
 
-The current iteration of the domain valuator is a ridge regression model utilizes web2 and web3 domain sales, going back to 1994.  Features including domain length and TLD are engineered for each domain, and the model is trained on the robust data set to be able to estimate the value of a given domain name.
+The current iteration of the domain valuator is a ridge regression model that utilizes web2 and web3 domain sales, going back to 1994.  Features including domain length and TLD are engineered for each domain, and the model is trained on the robust data set to be able to estimate the value of a given domain name.
 
 While the ridge regression model scored the highest on accuracy metrics, other estimation models and technologies such as Prophet and LSTM models are being considered. &#x20;
 
@@ -238,7 +238,7 @@ The web2 data was obtained via a .tsv file containing hundreds of thousands of d
 
 There are two ways to implement the Treasury Robo Advisors for production use. One approach is direct integration with a DAO treasury, where the wallet address is owned by the DAO but managed by the robo-advisor. This allows a DAO to have its own directly managed treasury address and utilize a robo-advisor controlled vault, with the treasury divided between the DAO-managed address and the robo-advisor managed address. Another option is to deploy the Treasury Robo Advisors independently as a sort of mutual fund, where a DAO can gain exposure by buying shares. In either scenario, a flat management fee could be collected upfront upon first deployment and/or on a regular basis (subscription-style fee), and a performance fee based on the robo-advisor's excess return over an index or benchmark could also be collected.
 
-Similarly, the Vault Robo Advisor could operate as its own vault or multiple vaults managed by the AI within the existing CDP protocol. The DAO could choose which vaults to deploy the robo-advisor in, enabling hybrid financial management between the advisor and the DAO. Alternatively, the Vault Robo Advisor could function without directly controlling a vault, instead monitoring the financial health and key metrics of the CDP protocol and making recommendations to the DAO, potentially even proposing actions. The extent of the robo-advisor's integration into financial management would be up to the DAO. A flat management fee could be collected upfront or on a subscription basis, with a performance fee based on excess return over an index or benchmark.
+Similarly, the Vault Robo Advisor could operate as its own vault or multiple vaults managed by the AI within the existing CDP protocol. The DAO could choose which vaults to deploy the robo-advisor in, enabling hybrid financial management between the advisor and the DAO. Alternatively, the Vault Robo Advisor could function without directly controlling a vault, instead monitoring the financial health and key metrics of the CDP protocol and making recommendations to the DAO, potentially even proposing actions via governance. The extent of the robo-advisor's integration into financial management would be up to the DAO. A flat management fee could be collected upfront or on a subscription basis, with a performance fee based on excess return over an index or benchmark.
 
 #### **LST Index**
 
@@ -256,16 +256,20 @@ A fee could be collected for using the domain valuator. Additionally, the valuat
 
 ### **Short-term Goals**: Upcoming features and developments.
 
-* Test net implementation of DAO Robo Advisors
-  * Treasury advisor more straight forward; similar to LST Index
-  * Vault advisor less so; need test net environment with test net participants
-* DAO Robo advisor pilots
-  * For treasury advisor, a DAO willing to utilize the advisor for treasury management
-  * For vault advisor, a CDP protocol (Maker, Open Dollar) willing to pilot robo-advised vault&#x20;
-* Further backtesting of LST index for best parameters such as rebalance frequency, model fit
-* Creation of Trading/Technical Analysis strategy for LST; intending to minimize slippage.  Currently makes the trades all at once; may need to spread the trades out over the hour and over several exchanges
-* Create smart contract to mint the fund shares for users who deposit into fund&#x20;
-* Integration of more data into domain valuator and further model testing, tuning, and feature engineering to increase accuracy on historical data
+* **Test Net Implementation of DAO Robo-Advisors**
+  * **Treasury Advisor:** More straightforward, similar to the LST Index.
+  * **Vault Advisor:** Less so; requires a test net environment with test net participants.
+* **DAO Robo-Advisor Pilots**
+  * **Treasury Advisor:** A DAO willing to utilize the advisor for treasury management.
+  * **Vault Advisor:** A CDP protocol (e.g., Maker, Open Dollar) willing to pilot robo-advised vaults.
+* **Further Backtesting of LST Index**
+  * Optimize parameters such as rebalance frequency and model fit.
+* **Creation of Trading/Technical Analysis Strategy for LST**
+  * Aiming to minimize slippage. Currently, trades are made all at once; may need to spread trades over the hour and across several exchanges.
+* **Create Smart Contract to Mint Fund Shares**
+  * For users who deposit into the fund.
+* **Integration of More Data into Domain Valuator**
+  * Further model testing, tuning, and feature engineering to increase accuracy on historical data.
 
 ### **Long-term Vision**: Expansion plans and future offerings.
 
