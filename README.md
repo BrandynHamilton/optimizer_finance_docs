@@ -26,7 +26,7 @@ As of current writing, Optimizer Finance has three applications which are:
 
 * DAO Robo-Advisors
 * ML-Managed Index Funds
-* Domain Valuators
+* Domain Name Valuators
 
 ## 2. Introduction
 
