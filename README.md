@@ -265,10 +265,10 @@ A fee could be collected for using the domain valuator. Additionally, the valuat
 
 * Sole Developer/Founder:
   * Brandyn Hamilton - Experienced Python Developer and Data Analyst specializing in financial data analytics, machine learning, and decentralized finance systems. With over seven years of experience in financial analysis, real estate, and research, I hold a Master of Science in Management with a focus on Financial Technology. Expert in leveraging Python and SQL for developing financial and analytical solutions. Recently recognized as a semi-finalist at StarkHack 2024 for pioneering a machine learning managed index fund of Liquid Staking Tokens
-    * Linkedin:&#x20;
-    * Twitter:
-    * Github:
-    * CV/Portfolio:&#x20;
+    * Linkedin: [https://www.linkedin.com/in/brandyn-hamilton/](https://www.linkedin.com/in/brandyn-hamilton/)
+    * Twitter: [https://x.com/Bhami628](https://x.com/Bhami628)
+    * Github: [https://github.com/BrandynHamilton](https://github.com/BrandynHamilton)
+    * [CV/Portfolio](https://silky-mambo-09e.notion.site/Brandyn-Hamilton-s-Portfolio-df15c30377f1427ebe1dcff4f1ef7c63)&#x20;
 
 ### **Advisors and Partners**
 
@@ -276,17 +276,17 @@ A fee could be collected for using the domain valuator. Additionally, the valuat
 
 ## 9. Contact Information
 
-* **Website**: optimizerfinance.com
-* **Email**: Contact email address.
+* **Website**: [optimizerfinance.com](https://www.optimizerfinance.com)
+* **Email**: BrandynHam1120@gmail.com
 * **Social Media**: Links to GitHub and other relevant profiles.
-  * Optimizer Finance Github:&#x20;
-  * Optimizer Finance Twitter:&#x20;
+  * Optimizer Finance Github: [https://github.com/enterprises/daoroboadvisor](https://github.com/enterprises/daoroboadvisor)
 
 ## 10. Appendices
 
 * **DAO Robo Advisor Results**: Detailed performance results.
-  * Links to advisor results and source code for averages testing
+  * [https://robo-advisor-labs.gitbook.io/dao-robo-advisor-whitepaper/vault-robo-advisor-results](https://robo-advisor-labs.gitbook.io/dao-robo-advisor-whitepaper/vault-robo-advisor-results)
+  * [https://robo-advisor-labs.gitbook.io/dao-robo-advisor-whitepaper/treasury-robo-advisor-results](https://robo-advisor-labs.gitbook.io/dao-robo-advisor-whitepaper/treasury-robo-advisor-results)
 * **LST Index Results**: Comprehensive results and comparisons.
-  * Link to LST index results and source code
+  * [https://robo-advisor-labs.gitbook.io/lst-index/lst-index-results](https://robo-advisor-labs.gitbook.io/lst-index/lst-index-results)
 * **Technical References**: Additional technical documentation and resources.
 
