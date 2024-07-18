@@ -4,9 +4,9 @@ Website: [optimizerfinance.com](https://www.optimizerfinance.com/)
 
 ## 1. Executive Summary
 
-The purpose of this litepaper is to provide an overview of Optimizer Finance, its current applications and projects, and future goals.  This is meant to provide an understanding of the organization regarding where it is currently and where it intends to be in the near future. &#x20;
+The purpose of this litepaper is to provide an overview of Optimizer Finance, its current applications and projects, and future goals.&#x20;
 
-Optimizer Finance is a research lab at the forefront of decentralized finance (DeFi) and Machine Learning (ML).  Optimizer Finance intends to optimize financial products and services in both traditional finance and DeFi through the use of advanced data analytics and machine learning techniques.  By prioritizing innovation, research, and collaboration, Optimizer Finance's products outperform the market and provide cutting-edge solutions to drive the DeFi sector.  The integration of AI and blockchain should be more than a buzzword; Optimizer Finance takes this integration seriously and has the results to back this up. &#x20;
+Optimizer Finance is a research lab at the forefront of decentralized finance (DeFi) and machine learning (ML).  Through the use of advanced data analytics and machine learning techniques, we are able to optimize financial products and services in the DeFi ecosystem, extending to traditional financial services.  By prioritizing innovation, research, and collaboration, Optimizer Finance's solutions outperform the market and provide cutting-edge solutions to drive the DeFi sector.&#x20;
 
 As of current writing, Optimizer Finance has three projects which are:
 
@@ -18,25 +18,23 @@ As of current writing, Optimizer Finance has three projects which are:
 
 ### **Background**
 
-Optimizer Finance started from the thesis that machine learning pairs exceptionally well with blockchain technology, and that ML management will enhance financial decision making in DeFi and the blockchain industry as a whole.  With blockchain's principles of decentralization and automation, ML and AI have opportunity to further these principles. &#x20;
-
-Optimizer Finance's first project, DAO Robo Advisors, grew from a graduate school project to see if a ML portfolio management strategy could enhance Decentralized Autonomous Organization (DAO) financial decision making and result in increased stability compared to the current strategies being deployed.  Given the promising results obtained from this initial hypothesis testing, the concept grew to further explore the integration of ML into other portions of DeFi.   &#x20;
+Optimizer Finance started from the hypothesis that ML will enhance financial decision making in DeFi and the blockchain industry as a whole.  Integration ML into the blockchain ecosystem has the opportunity to further automation within the space, which is a core principle of the technology.  Optimizer Finance's first project, DAO Robo Advisors, grew from a graduate school project to apply ML portfolio management strategies to enhance Decentralized Autonomous Organization (DAO) financial decision making.  Given the promising results obtained from initial hypothesis testing, the concept grew to further explore the integration of ML into other portions of DeFi.   &#x20;
 
 ### **Market Context**
 
-The DeFi space provides an environment for testing and truly new and innovative concepts, and the potential for smart contracts in finance is steadily being realized in traditional finance.  Industry finance titans are testing and developing products using blockchain technology and even utilizing public blockchains. &#x20;
+The DeFi space provides an environment for testing truly new and innovative concepts, and the potential for smart contracts in finance is steadily being realized in traditional finance.  Industry titans are developing products using blockchain technology, including deploying on public blockchains. &#x20;
 
-Related to DeFi, the introduction of Real World Assets (RWA) has provided a bridge between traditional finance and blockchain-enabled financial applications.  However, with the vast majority of RWA being non-digitally native, there is still friction in integrating the two concepts.  Domains present an interesting type of RWA, as they are digitally-native.  The on chain domain registrar 3DNS enables anyone to mint a domain as a blockchain asset, allowing easy and direct trading, management, and potential for financial applications such as collateralized loans.  Domain names may be the best type of RWA at this point, and companies like 3DNS and .Box are at the forefront of further integrating the Domain and blockchain industries. &#x20;
+Related to DeFi, the introduction of Real World Assets (RWA) as an asset class has provided a bridge between traditional finance and blockchain-enabled financial applications.  However, with the vast majority of RWA being non-digitally native, there is considerable friction in integration.  However, domain names are a unique type of RWA as they are digitally-native.  The on-chain domain registrar 3DNS enables anyone to mint a domain as a blockchain asset, allowing easy and direct trading, management, and potential for financial applications such as collateralized loans.  Domain names may be the best type of RWA at this point, and companies like 3DNS and top level domains such as .box are at the forefront of integrating the Domain and Blockchain industries. &#x20;
 
-The introduction of LLM models such as Chatgpt, and the increasing availability of cheap computing power has made machine learning (ML) accessible to a wider audience, allowing developers to test concepts integrating ML.  Traditional finance is steadily integrating ML into operations, with the use of robo advisors steadily increasing in the industry.  Robo advisors allow for impartial financial analysis and remove emotion from trading, which has resulted in outsized returns compared to previous strategies and methods.  The most impactful ML methods in Finance to date have been forecasting, useful for predicting asset prices and market movements; and reinforcement learning, which has been shown to outcompete with regarding to portfolio rebalancing.  With the increased access to ML technologies through several software libraries, we are seeing a revolution in ML for Finance.  However, this increased ease in access has made it difficult to discern which concepts and products are truly revolutionary, and those which use AI and ML as buzzwords to drive hype and potentially dupe investors. &#x20;
+The introduction of large language models (LLMs) such as ChatGPT, and the increasing availability of affordable computing power has made ML accessible to a wider audience, allowing developers to test and develop concepts integrating ML.  Traditional financial services are steadily integrating ML into operations, with the use of robo-advisors steadily increasing in the industry.  Robo-advisors allow for impartial financial analysis and can remove emotion from trading, with these advisors resulting in outsized returns compared to traditional strategies.  The most impactful ML methods in finance have been forecasting, useful for predicting asset prices and market movements; and reinforcement learning, which has been shown to efficiently manage portfolio rebalancing.  With the increased access to ML, we are seeing a revolution in its use in finance.&#x20;
 
 ## 3. Problem Statement
 
-**DAO Treasury Management Issues**: Inefficiencies, risks, and complexities.  While intending to be decentralized and autonomous, many decisions, particularly in financial management, are human led and driven, leading to potential conflicts of risk, collusion, and is a weak point in DAOs.
+**DAO Treasury Management Issues**: Inefficiencies, risks, and complexities.  While intending to be decentralized and autonomous, many decisions, particularly in financial management, are human led and driven, leading to potential conflicts of risk and collusion, a weak point in DAO governance.
 
 **Lack of Sophisticated Tools**: Challenges in traditional asset management.  While blockchain enables digitally native financial applications, traditional methods and strategies are still prevalent in DeFi, whereas the industry should strive to lead FinTech applications. &#x20;
 
-**Domain Valuation Challenges**: Issues in valuing web3 domains compared to web2 domains.  Web2 domain sales data is gated behind paywalls and can be expensive or difficult to access.  This makes the development of domain valuation models slower and less robust.  Further, web2 domain sales and management have serious pain points and domains are treated as if they are not natively digital. &#x20;
+**Domain Valuation Challenges**: Issues in valuing web2 and web3 domains.  Web2 domain sales data is gated behind paywalls and can be expensive or difficult to access.  This makes the development of domain valuation models slower and less robust.  Further, web2 domain sales and management have serious pain points, with domains treated as if they are physical real estate instead of digital assets.   &#x20;
 
 ## 4. Solutions Offered
 
@@ -52,17 +50,17 @@ The introduction of LLM models such as Chatgpt, and the increasing availability 
 
 </div>
 
-In a bid to enhance DAO treasury management, two robo advisors were developed, the Vault Robo Advisor and the Treasury Robo Advisor.  These advisors were trained and backtested specifically with DAO's in mind, taking into account the unique issues in DAO financial management.  While asset prices move quickly, DAO governance does not, which can lead to serious issues. &#x20;
+In an effort to enhance DAO treasury management, two robo advisors were developed, the Vault Advisor and the Treasury Advisor.  These models were trained and backtested specifically with DAO's in mind, taking into account the unique issues in DAO financial management.  While asset prices move quickly, DAO governance does not, which can lead to serious issues in portfolio allocation. &#x20;
 
-The vault robo advisor was designed with MakerDAO and the Maker Protocol in mind.  This advisor manages the portfolio of a CDP protocol by controlling the debt ceilings of several vaults within the protocol.  This is meant to incentivize/dis-incentivize deposits and withdrawals to vaults in the portfolio, and to target and drive towards an optimized portfolio in accordance with advanced financial calculations and the application of financial theory.  This is meant to balance growth and stability for CDP protocols. &#x20;
+The vault advisor was designed with MakerDAO and the Maker Protocol in mind; this advisor manages the portfolio of a  collateral debt position (CDP) protocol by controlling the debt ceilings of several vaults within the protocol.  This is meant to drive deposits and withdrawals to vaults in the portfolio, targeting an optimized portfolio informed by advanced financial calculations.  The goal is to balance growth and stability for CDP protocols. &#x20;
 
-The treasury robo advisor was developed for direct portfolio rebalancing, allowing the DAO to control key parameters such as selection of assets to choose from, rebalancing frequency, and portfolio bounds for an asset, enabling hybrid risk management. &#x20;
+The treasury advisor was developed for direct portfolio rebalancing, allowing the DAO to control key parameters such as investible assets, rebalancing frequency, and portfolio constraints, enabling hybrid risk management. &#x20;
 
 #### **Methodology**
 
 At the core of these models are Mean-Variance Optimization (MVO) and reinforcement learning (RL).  Mean-Variance Optimization is utilized to target an optimal portfolio allocation, specifically by targeting a portfolio with an optimal Sortino Ratio, which prioritizes reducing portfolio downside risk.  Reinforcement Learning enables the ML model to learn from its actions and dynamically tweak its strategy given the results of prior actions.  The Vault Robo Advisor uses a custom built RL model utilizing Q-Table learning, whereas the Treasury Advisor combines OpenAI's Gym.env environment with a Proximal Policy Optimization (PPO) RL model. &#x20;
 
-The Vault Robo Advisor specifically utilizes a forecasting model as the backbone of a simulator to simulate the results of debt ceiling changes on the respective vaults of the portfolio.  This enables robust backtesting of the model and to compare the historical results to the robo advisor managed results. &#x20;
+The Vault Robo Advisor specifically utilizes a forecasting model as the backbone of a simulator to simulate the results of debt ceiling changes on the respective vaults of the portfolio.  This enables robust backtesting of the model and to compare the historical results to the robo-advisor managed results. &#x20;
 
 #### **Performance Metrics**
 
