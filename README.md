@@ -32,7 +32,7 @@ The introduction of large language models (LLMs) such as ChatGPT, and the increa
 
 **DAO Treasury Management Issues**: Inefficiencies, risks, and complexities.  While intending to be decentralized and autonomous, many decisions, particularly in financial management, are human led and driven, leading to potential conflicts of risk and collusion, a weak point in DAO governance.
 
-**Lack of Sophisticated Tools**: Challenges in traditional asset management.  While blockchain enables digitally native financial applications, traditional methods and strategies are still prevalent in DeFi, whereas the industry should strive to lead FinTech applications. &#x20;
+**Lack of Sophisticated Tools**: Challenges in traditional asset management.  While blockchain enables digitally native financial applications, traditional methods and strategies are still prevalent in DeFi, whereas the industry should strive to lead fintech applications. &#x20;
 
 **Domain Valuation Challenges**: Issues in valuing web2 and web3 domains.  Web2 domain sales data is gated behind paywalls and can be expensive or difficult to access.  This makes the development of domain valuation models slower and less robust.  Further, web2 domain sales and management have serious pain points, with domains treated as if they are physical real estate instead of digital assets.   &#x20;
 
@@ -50,25 +50,25 @@ The introduction of large language models (LLMs) such as ChatGPT, and the increa
 
 </div>
 
-In an effort to enhance DAO treasury management, two robo advisors were developed, the Vault Advisor and the Treasury Advisor.  These models were trained and backtested specifically with DAO's in mind, taking into account the unique issues in DAO financial management.  While asset prices move quickly, DAO governance does not, which can lead to serious issues in portfolio allocation. &#x20;
+In an effort to enhance DAO treasury management, two robo-advisors were developed, the Vault Advisor and the Treasury Advisor.  These models were trained and backtested specifically with DAO's in mind, taking into account the unique issues in DAO financial management.  While asset prices move quickly, DAO governance does not, which can lead to serious issues in portfolio allocation. &#x20;
 
-The vault advisor was designed with MakerDAO and the Maker Protocol in mind; this advisor manages the portfolio of a  collateral debt position (CDP) protocol by controlling the debt ceilings of several vaults within the protocol.  This is meant to drive deposits and withdrawals to vaults in the portfolio, targeting an optimized portfolio informed by advanced financial calculations.  The goal is to balance growth and stability for CDP protocols. &#x20;
+The Vault Advisor was designed with MakerDAO and the Maker Protocol in mind; this advisor manages the portfolio of a  collateral debt position (CDP) protocol by controlling the debt ceilings of several vaults within the protocol.  This is meant to drive deposits and withdrawals to vaults in the portfolio, targeting an optimized portfolio informed by advanced financial calculations.  The goal is to balance growth and stability for CDP protocols. &#x20;
 
-The treasury advisor was developed for direct portfolio rebalancing, allowing the DAO to control key parameters such as investible assets, rebalancing frequency, and portfolio constraints, enabling hybrid risk management. &#x20;
+The Treasury Advisor was developed for direct portfolio rebalancing, allowing the DAO to control key parameters such as investible assets, rebalancing frequency, and portfolio constraints, enabling hybrid risk management. &#x20;
 
 #### **Methodology**
 
-At the core of these models are Mean-Variance Optimization (MVO) and reinforcement learning (RL).  Mean-Variance Optimization is utilized to target an optimal portfolio allocation, specifically by targeting a portfolio with an optimal Sortino Ratio, which prioritizes reducing portfolio downside risk.  Reinforcement Learning enables the ML model to learn from its actions and dynamically tweak its strategy given the results of prior actions.  The Vault Robo Advisor uses a custom built RL model utilizing Q-Table learning, whereas the Treasury Advisor combines OpenAI's Gym.env environment with a Proximal Policy Optimization (PPO) RL model. &#x20;
+At the core of these models are Mean-Variance Optimization (MVO) and reinforcement learning (RL).  Mean-Variance Optimization is employed to achieve an optimal portfolio allocation, focusing specifically on attaining an optimal Sortino ratio, which emphasizes minimizing portfolio downside risk.  RL enables the advisor to learn from its actions and dynamically tweak its strategy given the results of prior actions.  The Vault Advisor uses a custom built RL model utilizing Q-learning, whereas the Treasury Advisor combines OpenAI's Gym.env environment with a Proximal Policy Optimization (PPO) RL model. &#x20;
 
-The Vault Robo Advisor specifically utilizes a forecasting model as the backbone of a simulator to simulate the results of debt ceiling changes on the respective vaults of the portfolio.  This enables robust backtesting of the model and to compare the historical results to the robo-advisor managed results. &#x20;
+The Vault Advisor leverages a forecasting model as the core of a simulator to predict the effects of debt ceiling adjustments on the portfolio's vaults. This approach facilitates comprehensive backtesting of the model, allowing for comparisons between historical performance and results managed by the robo-advisor. &#x20;
 
 #### **Performance Metrics**
 
-Backtesting for the robo advisors showed improved portfolio returns and lower downside risk, as demonstrated by higher returns and Sortino Ratio metrics compared to the historical data. &#x20;
+Backtesting for the robo-advisors showed improved portfolio returns and lower downside risk, demonstrated by higher cumulative returns and Sortino ratio metrics compared to the historical data. &#x20;
 
 _**Treasury Advisor**_
 
-Averaging the results of 10 runs over 10 different seeds, 15 day rebalance frequency, the Treasury Robo Advisor achieved an average cumualtive return of 120% over the period of March 22, 2023 through May 15, 2025, with a average Sortino Ratio of 3.45.  Compared to the backtested DAO, PanamaDAO, which had a allocation of 99% ETH during the same time period and achieved a cumulative return of 61.80% and Sortino ratio of 1.81.  The treasury advisor also achieved a better Market risk adjusted strategy, with a Beta of 2.7 but a compound annual growth rate of 145%, compared to the DAO Beta of 1.74 and CAGR of 63.39%.  Several DAO Treasury indices were created to allow for comparison to DAO benchmarks; the average RL portfolio outperformed all but one index in terms of returns and market risk.
+Averaging the results of 10 runs over 10 different seeds with a 15-day rebalance frequency, the Treasury Robo Advisor achieved an average cumulative return of 120% from March 22, 2023, through May 15, 2025, and an average Sortino ratio of 3.45. In comparison, the backtested PanamaDAO, which allocated 99% to ETH during the same period, achieved a cumulative return of 61.80% and a Sortino ratio of 1.81. The Treasury Advisor also demonstrated a superior market risk-adjusted strategy with a Beta of 2.7 and a compound annual growth rate (CAGR) of 145%, compared to the DAO's Beta of 1.74 and CAGR of 63.39%. Several DAO Treasury indices were created for benchmarking purposes; the average RL portfolio outperformed all but one index in terms of returns and market risk.
 
 <div>
 
@@ -90,7 +90,7 @@ Averaging the results of 10 runs over 10 different seeds, 15 day rebalance frequ
 
 #### _Vault Advisor_
 
-Also averaging the results of 10 runs, the vault advisor similarly achieved outsized returns and lower downside risk.  Over the test period of May 20, 2022 through March 20, 2024, The RL average cumulative return was -19%, Sortino Ratio was -0.22, and Total Value Locked for the portfolio was $10,629,002,211.  Compared to Maker Protocol historical scores during the same period with a cumulative return of -34%, Sortino Ratio of -0.55, and TVL of $7,342,533,784.
+Averaging the results of 10 runs, the Vault Advisor also achieved outsized returns and lower downside risk. Over the test period from May 20, 2022, to March 20, 2024, the RL model's average cumulative return was -19%, with a Sortino ratio of -0.22 and a Total Value Locked (TVL) of $10,629,002,211. In comparison, the Maker Protocol's historical performance during the same period showed a cumulative return of -34%, a Sortino ratio of -0.55, and a TVL of $7,342,533,784.
 
 <div>
 
@@ -112,17 +112,17 @@ Also averaging the results of 10 runs, the vault advisor similarly achieved outs
 
 <figure><img src=".gitbook/assets/lst_webpage2.PNG" alt=""><figcaption></figcaption></figure>
 
-This project was developed out of StarkHack 2024, with the goal of simplifying and streamlining the process to gain the best exposure to Ethereum liquid staking tokens.  The index fund is managed by a ML, which uses Value at Risk/Conditional Value at Risk (VaR/CVaR), time series forecasting, and RL to chose an optimal portfolio of liquid staking tokens.  VaR/CVaR is used to inform the model of the potential losses associated with a portfolio, whereas forecasting is used to anticipate future asset prices, in a bid to reduce portfolio losses.  This info is fed to the RL model, which makes an optimal portfolio allocation given these results and calculations.  The RL model is able to choose from wstETH, rETH, and sfrxETH, considered to be the LSTs with adequate liquidity and least custody risk.  &#x20;
+This project was developed during StarkHack 2024, with the goal of simplifying and streamlining the process to gain the best exposure to Ethereum LSTs.  The index fund is managed by a ML model which uses Value at Risk/Conditional Value at Risk (VaR/CVaR), time series forecasting, and RL to chose an optimal portfolio of LSTs.  VaR/CVaR is used to inform the model of the potential losses associated with a portfolio, whereas forecasting is used to anticipate future asset prices in a bid to reduce portfolio losses.  This information is fed to the RL model, which makes an optimal portfolio allocation given these results and calculations.  The RL model is currently able to choose from wstETH, rETH, and sfrxETH, considered to be the LSTs with adequate liquidity and least custody risk.  &#x20;
 
 #### **Technology Stack**
 
-The ML model is housed in OpenAI's gym.env environment where a PPO RL model is informed from the VaR/CVaR and forecasting results to make a portfolio allocation.  The model takes in several parameters, principally rebalancing frequency, and outputs an action representing the target portfolio composition for the period. &#x20;
+The ML model operates within a gym.env environment, where a PPO RL model uses VaR/CVaR and forecasting results to inform portfolio allocation decisions.  The model accepts several parameters, principally rebalancing frequency, and outputs an action representing the target portfolio composition for the period. &#x20;
 
-The model and environment is imported into a Flask app which receives hourly price data for the LSTs via Flipside API, and rebalances given the rebalance frequency parameter.  The model is connected to a wallet on the Starknet Sepolia testnet using the Starknet.py Python SDK; once the model makes the action, the script translates that action into a new target balance, given the current balance of the Starknet wallet, and affects the necessary swaps to achieve the target composition.  Once the new composition is achieved for the fund, the data is captured and visualized on the Javascript front end.  This includes hourly composition, rewards, normalized comparison to LSTs, forecasted prices, fund value, and excess returns over the LSTs. &#x20;
+The model and environment are imported into a Flask app which receives hourly price data for the LSTs via Flipside API.  The model is connected to a wallet on the Starknet Sepolia testnet using the Starknet.py Python SDK; once the model makes the action, the script translates that action into a new target balance, and affects the necessary swaps to achieve the target composition.  Once the new composition is achieved for the fund, the key data is captured and visualized on the Javascript front-end.  This includes hourly composition, rewards, normalized comparison to LSTs, forecasted prices, fund value, and excess returns over the LSTs. &#x20;
 
 #### **Performance Results**
 
-Averaging 10 runs with 10 different random seeds, starting from January 10, 2023 through June 18, 2024, the index cumulative weighted daily return achieved an average excess return of 43% over rETH, 36% over wstETH, and 35% over sfrxETH.  At the end of the period, the index attained a CAGR of 125% compared to 103% for rETH, 107% for wstETH, and 107% for sfrxETH.  &#x20;
+Averaging 10 runs with 10 different random seeds from January 10, 2023, through June 18, 2024, the index achieved an average cumulative weighted daily excess return of 43% over rETH, 36% over wstETH, and 35% over sfrxETH. By the end of the period, the index attained a CAGR of 125%, compared to 103% for rETH, 107% for wstETH, and 107% for sfrxETH. &#x20;
 
 <div>
 
@@ -138,15 +138,15 @@ Averaging 10 runs with 10 different random seeds, starting from January 10, 2023
 
 <figure><img src=".gitbook/assets/boxdomainswebpage.PNG" alt=""><figcaption></figcaption></figure>
 
-The domain valuator tool comes as a result of preliminary data analysis on the 3DNS domains market.  Given that data, and the thesis that on chain domains are optimal RWA, the goal of the domain valuator is to provide a fair value for a domain.  This is to enable and increase liquidity for these domains, by giving buyers and sellers an estimate of how much a domain is worth.  The end user simply inputs the domain name they want to value, and the model provides an estimate.
+The domain valuator tool emerged from preliminary data analysis on the 3DNS domains market. Based on this data and the thesis that on-chain domains are optimal RWAs, the tool aims to provide a fair value for a domain. This enhances liquidity by giving buyers and sellers an estimate of a domain's worth. The end user simply inputs the domain name they want to value, and the model generates an estimate.
 
 #### **Integration**
 
-The specific ML model used currently is ridge linear regression.  A dataset of web2 domain sales from 1994, containing hundreds of thousands of domain sales, was used for training the model, in addition to the sales of 3DNS domains.  Given this historical data, the model estimates the value for a given domain based on its characteristics, such as length and domain ending. &#x20;
+The specific ML model currently in use is ridge linear regression. It was trained on a dataset of web2 domain sales dating back to 1994, which includes hundreds of thousands of domain sales, along with sales data from 3DNS domains. By fitting this historical data, the model estimates the value of a given domain based on characteristics such as length and top-level domain (TLD).
 
 #### **Current Progress**
 
-The model is currently being used to value .Box domains specifically, but has wider reaching implications.  The ability to automatically detect the 3DNS domains in a given wallet, and estimate the worth of the wallet's portfolio, is in progress.  Further development to increase its accuracy scores on historical data should optimize the estimations.  Once the model is performing optimally, there is potential to use it as a price reference for on chain domains to enable its use in DeFi applications, such as collateralized loans/CDPs.  This would also enable on chain domains use in DAO treasuries, furthering the thesis of on chain domains as optimal RWAs.     &#x20;
+The model is currently being used to value .box domains as part of a .box dashboard, but it has broader implications and can be configured to value any domain name. Work is underway to automatically detect 3DNS domains in a given wallet and estimate the worth of the wallet's portfolio. Further development to enhance its accuracy scores on historical data should optimize the estimations. Once the model is performing optimally, it has the potential to serve as a price reference for on-chain domains, enabling its use in DeFi applications such as collateralized loans/CDPs. This would also facilitate the inclusion of on-chain domains in DAO treasuries, supporting the thesis of on-chain domains as optimal RWAs.     &#x20;
 
 ## 5. Technical Architecture
 
@@ -154,31 +154,29 @@ The model is currently being used to value .Box domains specifically, but has wi
 
 #### **Architecture**
 
-The current iteration is live in the form of a Streamlit app which allows a user to configure their own robo advisor and compare results to historical data and benchmarks.  An on chain iteration could be used as a stand alone fund in which a DAO would buy a share, or integrated to rebalance a specific DAO Treasury wallet address. &#x20;
+This project is live in the form of a Streamlit app which allows a user to configure their own robo advisor and compare results to historical data and benchmarks.  An on-chain app could be implemented as either a stand alone fund in which a DAO would buy a share, or integrated directly into a DAO treasury to rebalance a specified wallet address. &#x20;
 
 <figure><img src=".gitbook/assets/dao_robo_advsior_flow.png" alt=""><figcaption><p>Streamlit App Flow</p></figcaption></figure>
 
 #### **Data Handling**
 
-_**Vault Robo Advisor**_
+_**Vault Advisor**_
 
-The Vault Robo Advisor utilizes a simulation portion to backtest the model's strategy.  This simulator utilizes multiple linear regression with ridge tuning, as well as stochastic variables such as moving average volatility, to simulate vault balances changes as a result of debt ceiling adjustments.  This forecasting model was trained on tens of thousands of data points obtained from on-chain data analysis of the Maker core accounting system (VAT), existing dashboards and queries aggregating protocol data, as well as crypto market and macroeconomic data such as risk-free rates, CPI, crypto market volume, etc.&#x20;
+The Vault Advisor uses a simulation component to backtest the model's strategy. This simulator employs multiple linear regression with ridge tuning and incorporates stochastic variables such as moving average volatility to simulate changes in vault balances due to debt ceiling adjustments. The forecasting model was trained on tens of thousands of data points from on-chain data analysis of the Maker core accounting system (VAT), existing dashboards and protocol data queries, and macroeconomic and crypto market data, including risk-free rates, CPI, and market volume.
 
-The vault robo advisor works on a 24 day rebalance strategy; every 24 days the model calculates mean variance optimization target weights, portfolio return and Sortino ratio, which is translated into a reward.  Given that reward, the model chooses a debt ceiling adjustment strategy which targets an optimal portfolio composition.  For example, the target weights may signify less capital in the ETH vault and more capital in the BTC vault, as a result of Sortino ratio calculations for each vault.  As a result, the model will reduce the ETH vault and increase the BTC vault by a certain amount over the 24 day period. &#x20;
+Operating on a 24-day rebalance strategy, the model calculates mean variance optimization target weights, portfolio return, and Sortino ratio every 24 days, which are then translated into a reward. Based on this reward, the model selects a debt ceiling adjustment strategy that targets an optimal portfolio composition. For instance, Sortino ratio calculations for each vault might result in reduced capital in the ETH vault and increased capital in the BTC vault. Consequently, the model will decrease the ETH vault and increase the BTC vault over the 24-day period.
 
-The custom RL model trains by making random actions for the first few 24 day cycles, and from then on uses the results of those actions to inform an optimal policy, continuously learning from its actions. &#x20;
+The custom RL model begins training by making random actions during the initial 24-day cycles, using the outcomes to develop an optimal policy and continuously refining its strategy based on these results.
 
 
 
 <figure><img src=".gitbook/assets/vault_advisor_cycle.png" alt=""><figcaption><p>Vault Advisor Cycle</p></figcaption></figure>
 
-_**Treasury Robo Advisor**_&#x20;
+_**Treasury Advisor**_&#x20;
 
-The Treasury Robo Advisor is more direct in rebalancing a portfolio.  DAO Treasury indices and benchmarks were created by calculating the weighted daily returns of the treasury assets for a variety of DAOs by sector, and those returns were aggregated to represent a sector index.  Regarding the model itself, in an attempt to smooth over cash flows which would impact the DAO treasury balance, the model targets specific portfolio compositions, and returns are calculated in the same manner as the DAO treasury indicies.  Given the rebalance parameter, the model generates an action given a combined Sortino ratio and portfolio return reward as feedback.  Unlike the Vault Robo Advisor, we are able to directly swap into the target portfolio composition, removing the need for a simulation model. &#x20;
+The Treasury Advisor takes a more direct approach to portfolio rebalancing. DAO Treasury indices and benchmarks are created by calculating the weighted daily returns of treasury assets across various DAOs by sector, aggregating these returns to form a sector index. The model targets specific portfolio compositions to smooth cash flows that could impact the DAO treasury balance, calculating returns in the same manner as the DAO treasury indices. Given the rebalance parameter, the model generates actions based on a combined Sortino ratio and portfolio return reward as feedback. Unlike the Vault Robo Advisor, this model allows for direct swaps into the target portfolio composition, eliminating the need for a simulation model.
 
-After the model runs for the specified start and end date, the ending portfolio return and Sortino ratio are calculated, as well as normalized returns.  This is used for comparison with the DAO treasury indices.  Furthermore, a security market line visualization is created to also compare the portfolio performance in terms of market risk/return.     &#x20;
-
-The model is first trained and fitted on historical data to develop an optimal policy for the environment.  Once a model which performs well on historical data is fitted, the model is deployed in a test run. &#x20;
+After the model runs for the specified start and end date, the final portfolio return, Sortino ratio, and normalized returns are calculated and compared with the DAO treasury indices. Additionally, a security market line visualization is created to compare portfolio performance in terms of market risk/return. The model is initially trained and fitted on historical data to develop an optimal policy for the environment. Once a well-performing model is established, it is deployed in a test run.
 
 <figure><img src=".gitbook/assets/treasury_advisor_cycle.png" alt=""><figcaption><p>Treasury Advisor Cycle</p></figcaption></figure>
 
@@ -186,7 +184,7 @@ The model is first trained and fitted on historical data to develop an optimal p
 
 #### **Environment Setup**
 
-This model is a customized extension of the Treasury Robo Advisor.  Instead of focusing on and being backtested to DAO treasury performance, the model targets an optimal portfolio of LSTs, designed to provide the best exposure to the asset class.  Hourly data is fed to the model, with rewards and forecasts generated accordingly.  The model rebalances given the rebalance frequency parameter. &#x20;
+This model is a customized extension of the Treasury Advisor.  Instead of focusing on and being backtested to DAO treasury performance, the model targets an optimal portfolio of LSTs and is designed to provide the best exposure to the asset class.  Hourly data is fed to the model, with rewards and forecasts generated accordingly.  The model rebalances given the rebalance frequency parameter. &#x20;
 
 The model was trained and fitted to historical data, from January 2023 through June 2024, to develop an optimal policy for the environment.  This optimized model was then deployed on live data.  From initial backtesting, a 24 hour rebalance frequency performed best. &#x20;
 
@@ -206,7 +204,7 @@ Every hour the Flask app updates, which then sends the new data to a Javascript 
 
 #### **Script and App**
 
-The current iteration of the domain valuator is a ridge regression model utilizes web2 and web3 domain sales, going back to 1994.  Features including domain length and top-level domain are engineered for each domain, and the model is trained on the robust data set to be able to forecast the value of a given domain name.
+The current iteration of the domain valuator is a ridge regression model utilizes web2 and web3 domain sales, going back to 1994.  Features including domain length and TLD are engineered for each domain, and the model is trained on the robust data set to be able to forecast the value of a given domain name.
 
 While the ridge regression model scored the highest on accuracy metrics, other estimation models and technologies such as the Prophet library and LSTM models are being considered. &#x20;
 
