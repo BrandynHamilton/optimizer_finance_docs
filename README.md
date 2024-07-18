@@ -20,7 +20,7 @@ Website: [optimizerfinance.com](https://www.optimizerfinance.com/)
 
 The purpose of this litepaper is to provide an overview of Optimizer Finance, its current applications and projects, and future goals.&#x20;
 
-Optimizer Finance is a research lab at the forefront of decentralized finance (DeFi) and machine learning (ML).  Through the use of advanced data analytics and machine learning techniques, we are able to optimize financial products and services in the DeFi ecosystem, extending to traditional financial services.  By prioritizing innovation, research, and collaboration, Optimizer Finance's solutions outperform market benchmarks and provide cutting-edge solutions to drive the DeFi sector forward.&#x20;
+Optimizer Finance is a research lab leading the way in decentralized finance (DeFi) and machine learning (ML). By leveraging advanced data analytics and ML techniques, we optimize financial products and services within the DeFi ecosystem and extend these innovations to traditional financial services. Emphasizing innovation, research, and collaboration, Optimizer Finance consistently outperforms market benchmarks and delivers cutting-edge solutions to propel the DeFi sector forward.
 
 As of current writing, Optimizer Finance has three applications which are:
 
