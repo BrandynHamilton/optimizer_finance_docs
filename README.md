@@ -1,3 +1,17 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
 # Optimizer Finance Litepaper
 
 Website: [optimizerfinance.com](https://www.optimizerfinance.com/)
@@ -6,11 +20,11 @@ Website: [optimizerfinance.com](https://www.optimizerfinance.com/)
 
 The purpose of this litepaper is to provide an overview of Optimizer Finance, its current applications and projects, and future goals.&#x20;
 
-Optimizer Finance is a research lab at the forefront of decentralized finance (DeFi) and machine learning (ML).  Through the use of advanced data analytics and machine learning techniques, we are able to optimize financial products and services in the DeFi ecosystem, extending to traditional financial services.  By prioritizing innovation, research, and collaboration, Optimizer Finance's solutions outperform the market and provide cutting-edge solutions to drive the DeFi sector.&#x20;
+Optimizer Finance is a research lab at the forefront of decentralized finance (DeFi) and machine learning (ML).  Through the use of advanced data analytics and machine learning techniques, we are able to optimize financial products and services in the DeFi ecosystem, extending to traditional financial services.  By prioritizing innovation, research, and collaboration, Optimizer Finance's solutions outperform market benchmarks and provide cutting-edge solutions to drive the DeFi sector forward.&#x20;
 
-As of current writing, Optimizer Finance has three projects which are:
+As of current writing, Optimizer Finance has three applications which are:
 
-* DAO Robo Advisors
+* DAO Robo-Advisors
 * ML-Managed Index Funds
 * Domain Valuators
 
@@ -18,21 +32,21 @@ As of current writing, Optimizer Finance has three projects which are:
 
 ### **Background**
 
-Optimizer Finance started from the hypothesis that ML will enhance financial decision making in DeFi and the blockchain industry as a whole.  Integration ML into the blockchain ecosystem has the opportunity to further automation within the space, which is a core principle of the technology.  Optimizer Finance's first project, DAO Robo Advisors, grew from a graduate school project to apply ML portfolio management strategies to enhance Decentralized Autonomous Organization (DAO) financial decision making.  Given the promising results obtained from initial hypothesis testing, the concept grew to further explore the integration of ML into other portions of DeFi.   &#x20;
+Optimizer Finance began with the hypothesis that ML would enhance financial decision-making in DeFi and the blockchain industry overall. Integrating ML into the blockchain ecosystem offers opportunities to further automate processes, which aligns with the core principles of the technology. Optimizer Finance's first project, DAO Robo-Advisors, evolved from a graduate school project focused on applying ML portfolio management strategies to improve financial decision-making within Decentralized Autonomous Organizations (DAOs). The promising results from initial hypothesis testing led to further exploration of ML integration into other areas of DeFi.   &#x20;
 
 ### **Market Context**
 
-The DeFi space provides an environment for testing truly new and innovative concepts, and the potential for smart contracts in finance is steadily being realized in traditional finance.  Industry titans are developing products using blockchain technology, including deploying on public blockchains. &#x20;
+The DeFi space offers an environment for testing truly new and innovative concepts, with the potential for smart contracts in finance gradually being realized in traditional finance. Industry leaders are developing products using blockchain technology, including deploying on public blockchains.
 
-Related to DeFi, the introduction of Real World Assets (RWA) as an asset class has provided a bridge between traditional finance and blockchain-enabled financial applications.  However, with the vast majority of RWA being non-digitally native, there is considerable friction in integration.  However, domain names are a unique type of RWA as they are digitally-native.  The on-chain domain registrar 3DNS enables anyone to mint a domain as a blockchain asset, allowing easy and direct trading, management, and potential for financial applications such as collateralized loans.  Domain names may be the best type of RWA at this point, and companies like 3DNS and top level domains such as .box are at the forefront of integrating the Domain and Blockchain industries. &#x20;
+In the realm of DeFi, the introduction of Real World Assets (RWA) as an asset class has created a bridge between traditional finance and blockchain-enabled financial applications. However, integrating RWAs, which are mostly non-digitally native, poses considerable friction. Domain names, being digitally native, represent a unique type of RWA. The on-chain domain registrar 3DNS allows anyone to mint a domain as a blockchain asset, enabling easy and direct trading, management, and financial applications such as collateralized loans. Domain names may be the most optimal type of RWA currently, with companies like 3DNS and top-level domains (TLDs) such as .box leading the integration of the Domain and Blockchain industries.
 
-The introduction of large language models (LLMs) such as ChatGPT, and the increasing availability of affordable computing power has made ML accessible to a wider audience, allowing developers to test and develop concepts integrating ML.  Traditional financial services are steadily integrating ML into operations, with the use of robo-advisors steadily increasing in the industry.  Robo-advisors allow for impartial financial analysis and can remove emotion from trading, with these advisors resulting in outsized returns compared to traditional strategies.  The most impactful ML methods in finance have been forecasting, useful for predicting asset prices and market movements; and reinforcement learning, which has been shown to efficiently manage portfolio rebalancing.  With the increased access to ML, we are seeing a revolution in its use in finance.&#x20;
+The introduction of large language models (LLMs) like ChatGPT and the increasing availability of affordable computing power have made ML accessible to a wider audience, allowing developers to test and develop concepts integrating ML. Traditional financial services are steadily incorporating ML into operations, with the use of robo-advisors increasing in the industry. Robo-advisors enable impartial financial analysis and can remove emotion from trading, often resulting in better returns compared to traditional strategies. The most impactful ML methods in finance have been forecasting, useful for predicting asset prices and market movements, and reinforcement learning, which has proven effective in managing portfolio rebalancing. With increased access to ML, we are witnessing a revolution in its application in finance.
 
 ## 3. Problem Statement
 
-**DAO Treasury Management Issues**: Inefficiencies, risks, and complexities.  While intending to be decentralized and autonomous, many decisions, particularly in financial management, are human led and driven, leading to potential conflicts of risk and collusion, a weak point in DAO governance.
+**DAO Treasury Management Issues**: Inefficiencies, risks, and complexities.  While intending to be decentralized and autonomous, many decisions, particularly financial management, are human led and driven, leading to potential conflicts of risk and collusion, a weak point in DAO governance.
 
-**Lack of Sophisticated Tools**: Challenges in traditional asset management.  While blockchain enables digitally native financial applications, traditional methods and strategies are still prevalent in DeFi, whereas the industry should strive to lead fintech applications. &#x20;
+**Lack of Sophisticated Tools**: Challenges in traditional asset management.  While blockchain enables digitally native financial applications, traditional methods and strategies are still prevalent in DeFi. The industry should strive to lead fintech applications.&#x20;
 
 **Domain Valuation Challenges**: Issues in valuing web2 and web3 domains.  Web2 domain sales data is gated behind paywalls and can be expensive or difficult to access.  This makes the development of domain valuation models slower and less robust.  Further, web2 domain sales and management have serious pain points, with domains treated as if they are physical real estate instead of digital assets.   &#x20;
 
@@ -52,15 +66,15 @@ The introduction of large language models (LLMs) such as ChatGPT, and the increa
 
 In an effort to enhance DAO treasury management, two robo-advisors were developed, the Vault Advisor and the Treasury Advisor.  These models were trained and backtested specifically with DAO's in mind, taking into account the unique issues in DAO financial management.  While asset prices move quickly, DAO governance does not, which can lead to serious issues in portfolio allocation. &#x20;
 
-The Vault Advisor was designed with MakerDAO and the Maker Protocol in mind; this advisor manages the portfolio of a  collateral debt position (CDP) protocol by controlling the debt ceilings of several vaults within the protocol.  This is meant to drive deposits and withdrawals to vaults in the portfolio, targeting an optimized portfolio informed by advanced financial calculations.  The goal is to balance growth and stability for CDP protocols. &#x20;
+The Vault Advisor was designed with MakerDAO and the Maker Protocol in mind; this advisor manages the portfolio of a collateral debt position (CDP) protocol by controlling the debt ceilings of several vaults within the protocol.  This is meant to drive deposits and withdrawals to certain vaults in the portfolio, targeting an optimized portfolio informed by advanced financial calculations.  The goal is to balance growth and stability for CDP protocols. &#x20;
 
 The Treasury Advisor was developed for direct portfolio rebalancing, allowing the DAO to control key parameters such as investible assets, rebalancing frequency, and portfolio constraints, enabling hybrid risk management. &#x20;
 
 #### **Methodology**
 
-At the core of these models are Mean-Variance Optimization (MVO) and reinforcement learning (RL).  Mean-Variance Optimization is employed to achieve an optimal portfolio allocation, focusing specifically on attaining an optimal Sortino ratio, which emphasizes minimizing portfolio downside risk.  RL enables the advisor to learn from its actions and dynamically tweak its strategy given the results of prior actions.  The Vault Advisor uses a custom built RL model utilizing Q-learning, whereas the Treasury Advisor combines OpenAI's Gym.env environment with a Proximal Policy Optimization (PPO) RL model. &#x20;
+At the core of these models are mean-variance optimization (MVO) and reinforcement learning (RL).  MVO is employed to achieve an optimal portfolio allocation, focusing specifically on attaining an optimal Sortino ratio, which emphasizes minimizing portfolio downside risk.  RL enables the advisor to learn from its actions and dynamically tweak its strategy given the results of prior actions.  The Vault Advisor uses a custom built RL model utilizing Q-learning, whereas the Treasury Advisor combines OpenAI's gym.env environment with a Proximal Policy Optimization (PPO) RL model. &#x20;
 
-The Vault Advisor leverages a forecasting model as the core of a simulator to predict the effects of debt ceiling adjustments on the portfolio's vaults. This approach facilitates comprehensive backtesting of the model, allowing for comparisons between historical performance and results managed by the robo-advisor. &#x20;
+The Vault Advisor leverages a forecasting model as the core of a simulator to predict the effects of debt ceiling adjustments on the protocol's vaults. This approach facilitates comprehensive backtesting of the model, allowing for comparisons between historical performance and results managed by the robo-advisor. &#x20;
 
 #### **Performance Metrics**
 
@@ -68,7 +82,7 @@ Backtesting for the robo-advisors showed improved portfolio returns and lower do
 
 _**Treasury Advisor**_
 
-Averaging the results of 10 runs over 10 different seeds with a 15-day rebalance frequency, the Treasury Robo Advisor achieved an average cumulative return of 120% from March 22, 2023, through May 15, 2025, and an average Sortino ratio of 3.45. In comparison, the backtested PanamaDAO, which allocated 99% to ETH during the same period, achieved a cumulative return of 61.80% and a Sortino ratio of 1.81. The Treasury Advisor also demonstrated a superior market risk-adjusted strategy with a Beta of 2.7 and a compound annual growth rate (CAGR) of 145%, compared to the DAO's Beta of 1.74 and CAGR of 63.39%. Several DAO Treasury indices were created for benchmarking purposes; the average RL portfolio outperformed all but one index in terms of returns and market risk.
+Averaging the results of 10 runs over 10 different seeds with a 15-day rebalance frequency, the Treasury Advisor achieved an average cumulative return of 120% from March 22, 2023, through May 15, 2025, and an average Sortino ratio of 3.45. In comparison, the backtested PanamaDAO, which allocated 99% to ETH during the same period, achieved a cumulative return of 61.80% and a Sortino ratio of 1.81. The Treasury Advisor also demonstrated a superior market risk-adjusted strategy with a Beta of 2.7 and a compound annual growth rate (CAGR) of 145%, compared to the DAO's Beta of 1.74 and CAGR of 63.39%. Several DAO Treasury indices were created for benchmarking purposes; the average RL portfolio outperformed all but one index in terms of returns and market risk.
 
 <div>
 
@@ -116,13 +130,13 @@ This project was developed during StarkHack 2024, with the goal of simplifying a
 
 #### **Technology Stack**
 
-The ML model operates within a gym.env environment, where a PPO RL model uses VaR/CVaR and forecasting results to inform portfolio allocation decisions.  The model accepts several parameters, principally rebalancing frequency, and outputs an action representing the target portfolio composition for the period. &#x20;
+The model operates within a gym.env environment, where a PPO RL model uses VaR/CVaR and forecasting results to inform portfolio allocation decisions.  The model accepts several parameters, principally rebalancing frequency, and outputs an action representing the target portfolio composition for the period. &#x20;
 
-The model and environment are imported into a Flask app which receives hourly price data for the LSTs via Flipside API.  The model is connected to a wallet on the Starknet Sepolia testnet using the Starknet.py Python SDK; once the model makes the action, the script translates that action into a new target balance, and affects the necessary swaps to achieve the target composition.  Once the new composition is achieved for the fund, the key data is captured and visualized on the Javascript front-end.  This includes hourly composition, rewards, normalized comparison to LSTs, forecasted prices, fund value, and excess returns over the LSTs. &#x20;
+The model and environment are imported into a Flask app which receives hourly price data for the LSTs via Flipside API.  The model is connected to a wallet on the Starknet Sepolia testnet using the Starknet.py Python SDK; once the model makes the action, the script translates that action into a new target balance, and affects the necessary swaps to achieve the target composition.  Once the new composition is achieved for the fund, key data is captured and visualized on the Javascript front-end.  This includes hourly portfolio composition, model rewards, normalized comparison to LSTs, forecasted prices, fund value, and excess returns over the LSTs. &#x20;
 
 #### **Performance Results**
 
-Averaging 10 runs with 10 different random seeds from January 10, 2023, through June 18, 2024, the index achieved an average cumulative weighted daily excess return of 43% over rETH, 36% over wstETH, and 35% over sfrxETH. By the end of the period, the index attained a CAGR of 125%, compared to 103% for rETH, 107% for wstETH, and 107% for sfrxETH. &#x20;
+Averaging 10 runs with 10 different random seeds from January 10, 2023, through June 18, 2024, the index achieved an average cumulative return of 43% over rETH, 36% over wstETH, and 35% over sfrxETH. By the end of the period, the index attained a CAGR of 125%, compared to 103% for rETH, 107% for wstETH, and 107% for sfrxETH. &#x20;
 
 <div>
 
@@ -142,7 +156,7 @@ The domain valuator tool emerged from preliminary data analysis on the 3DNS doma
 
 #### **Integration**
 
-The specific ML model currently in use is ridge linear regression. It was trained on a dataset of web2 domain sales dating back to 1994, which includes hundreds of thousands of domain sales, along with sales data from 3DNS domains. By fitting this historical data, the model estimates the value of a given domain based on characteristics such as length and top-level domain (TLD).
+The specific ML model in use is ridge linear regression. It was trained on a dataset of web2 domain sales dating back to 1994, which includes hundreds of thousands of domain sales, along with sales data from 3DNS domains. By fitting this historical data, the model estimates the value of a given domain based on characteristics such as length and top-level domain (TLD).
 
 #### **Current Progress**
 
