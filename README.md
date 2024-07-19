@@ -82,7 +82,7 @@ Backtesting for the robo-advisors showed improved portfolio returns and lower do
 
 _**Treasury Advisor**_
 
-Averaging the results of 10 runs over 10 different seeds with a 15-day rebalance frequency, the Treasury Advisor achieved an average cumulative return of 120% from March 22, 2023, through May 15, 2025, and an average Sortino ratio of 3.45. In comparison, the backtested PanamaDAO, which allocated 99% to ETH during the same period, achieved a cumulative return of 61.80% and a Sortino ratio of 1.81. The Treasury Advisor also demonstrated a superior market risk-adjusted strategy with a Beta of 2.7 and a compound annual growth rate (CAGR) of 145%, compared to the DAO's Beta of 1.74 and CAGR of 63.39%. Several DAO Treasury indices were created for benchmarking purposes; the average RL portfolio outperformed all but one index in terms of returns and market risk.
+Averaging the results of 10 runs over 10 different seeds with a 15-day rebalance frequency, the Treasury Advisor achieved an average cumulative return of 120% from March 22, 2023, through May 15, 2024, and an average Sortino ratio of 3.45. In comparison, the backtested PanamaDAO, which allocated 99% to ETH during the same period, achieved a cumulative return of 61.80% and a Sortino ratio of 1.81. The Treasury Advisor also demonstrated a superior market risk-adjusted strategy with a Beta of 2.7 and a compound annual growth rate (CAGR) of 145%, compared to the DAO's Beta of 1.74 and CAGR of 63.39%. Several DAO Treasury indices were created for benchmarking purposes; the average RL portfolio outperformed all but one index in terms of returns and market risk.
 
 <div>
 
