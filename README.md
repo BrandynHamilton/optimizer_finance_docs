@@ -198,7 +198,7 @@ After the model runs for the specified start and end date, the final portfolio r
 
 #### **Environment Setup**
 
-This model is a customized extension of the Treasury Advisor. Instead of focusing on and being backtested against DAO treasury performance, it targets an optimal portfolio of Liquid Staking Tokens (LSTs) to provide the best exposure to the asset class. The model receives hourly data, generating rewards and forecasts accordingly, and rebalances based on the specified rebalance frequency parameter.
+This model is a customized extension of the Treasury Advisor. Instead of focusing on and being backtested against DAO treasury performance, it targets an optimal portfolio of LSTs to provide the best exposure to the asset class. The model receives hourly data, generating rewards and forecasts accordingly, and rebalances based on the specified rebalance frequency parameter.
 
 The model was trained and fitted to historical data from January 2023 through June 2024 to develop an optimal policy for the environment. This optimized model was then deployed on live data. Initial backtesting indicated that a 24-hour rebalance frequency yielded the best performance.&#x20;
 
