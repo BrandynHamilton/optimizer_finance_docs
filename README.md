@@ -286,7 +286,7 @@ A fee could be collected for using the domain valuator. Additionally, the valuat
     * Linkedin: [https://www.linkedin.com/in/brandyn-hamilton/](https://www.linkedin.com/in/brandyn-hamilton/)
     * Twitter: [https://x.com/Bhami628](https://x.com/Bhami628)
     * Github: [https://github.com/BrandynHamilton](https://github.com/BrandynHamilton)
-    * [CV/Portfolio](https://silky-mambo-09e.notion.site/Brandyn-Hamilton-s-Portfolio-df15c30377f1427ebe1dcff4f1ef7c63)&#x20;
+    * [CV/Portfolio](https://brandynh.notion.site/Brandyn-Hamilton-s-Portfolio-df15c30377f1427ebe1dcff4f1ef7c63)&#x20;
 
 ### **Advisors and Partners**
 
