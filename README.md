@@ -296,7 +296,7 @@ A fee could be collected for using the domain valuator. Additionally, the valuat
 
 * **Website**: [optimizerfinance.com](https://www.optimizerfinance.com)
 * **Email**: BrandynHam1120@gmail.com
-* **Social Media**: Links to GitHub and other relevant profiles.
+* **Social Media**:&#x20;
   * Optimizer Finance Github: [https://github.com/enterprises/daoroboadvisor](https://github.com/enterprises/daoroboadvisor)
 
 ## 10. Appendices
